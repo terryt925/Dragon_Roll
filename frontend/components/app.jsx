@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBarContainer from './nav_bar/nav_bar_container';
+import WelcomeBar from './nav_bar/welcome_bar_container';
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import { Route } from 'react-router-dom';
