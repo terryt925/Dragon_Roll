@@ -4,7 +4,7 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
+      username: '',
       password: '',
     };
 
@@ -27,11 +27,11 @@ class Login extends React.Component {
       <div>
         <h2>Login</h2>
         <form>
-          <label>Email:
+          <label>Username:
           <input
               type="text"
-              value={this.state.email}
-              onChange={this.update('email')}
+              value={this.state.username}
+              onChange={this.update('username')}
             />
           </label>
           <label>Password:
