@@ -443,10 +443,10 @@ var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
   return {
     errors: errors.session,
-    formType: 'login',
+    formType: 'Login',
     navLink: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
       to: "/signup"
-    }, "sign up instead")
+    }, "Sign Up")
   };
 };
 
@@ -454,6 +454,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch((0,_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__.login)(user));
+    },
+    demoLogin: function demoLogin() {
+      return dispatch((0,_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__.login)({
+        username: 'demo',
+        password: 'password'
+      }));
     }
   };
 };
@@ -474,6 +480,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -500,6 +507,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var SessionForm = /*#__PURE__*/function (_React$Component) {
   _inherits(SessionForm, _React$Component);
 
@@ -513,13 +521,21 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = {
       username: '',
-      password: ''
+      password: '',
+      errors: []
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.formTitle = _this.formTitle.bind(_assertThisInitialized(_this));
+    _this.demoLogin = _this.demoLogin.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(SessionForm, [{
+    key: "formTitle",
+    value: function formTitle() {
+      if (this.props.formType === 'Login') return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Welcome back!");else return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Sign up for free!");
+    }
+  }, {
     key: "update",
     value: function update(field) {
       var _this2 = this;
@@ -531,9 +547,73 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.processForm(user);
+      this.props.processForm(user).then(function () {
+        return _this3.props.history.push("/");
+      }).fail(function () {
+        return _this3.setState({
+          errors: _this3.props.errors
+        });
+      });
+    }
+  }, {
+    key: "renderDemo",
+    value: function renderDemo() {
+      if (this.props.formType === "Login") {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+          type: "submit",
+          onClick: this.demoLogin,
+          value: "Demo Login"
+        });
+      }
+    }
+  }, {
+    key: "demoLogin",
+    value: function demoLogin(e) {
+      var _this4 = this;
+
+      e.preventDefault();
+      var demo = {
+        username: "demo",
+        password: "password"
+      };
+      var speed = 100;
+
+      if (this.state.username !== demo.username) {
+        var inputUsername = setInterval(function () {
+          if (_this4.state.username !== demo.username) {
+            var temp = demo.username.slice(0, _this4.state.username.length + 1);
+
+            _this4.setState({
+              username: temp
+            });
+          } else {
+            clearInterval(inputUsername);
+            animatePW();
+          }
+        }, speed);
+      }
+
+      var animatePW = function animatePW() {
+        if (_this4.state.password !== demo.password) {
+          var inputPassword = setInterval(function () {
+            if (_this4.state.password !== demo.password) {
+              var temp = demo.password.slice(0, _this4.state.password.length + 1);
+
+              _this4.setState({
+                password: temp
+              });
+            } else {
+              clearInterval(inputPassword);
+
+              _this4.props.demoLogin(demo);
+            }
+          }, speed);
+        }
+      };
     }
   }, {
     key: "renderErrors",
@@ -547,20 +627,33 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var errors = this.state.errors.map(function (el, idx) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+          key: idx
+        }, el);
+      });
+      var buttonLog = this.props.formType === "Login" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+        to: "/signup"
+      }, "Don't have an account? Sign up today!")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+        to: "/login"
+      }, "Already have an account? Log in now!"));
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+        className: "form",
         onSubmit: this.handleSubmit
-      }, "Welcome to DragonRoll!", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "Please ", this.props.formType, " or ", this.props.navLink, this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Username:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      }, this.formTitle(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        placeholder: "Username",
         type: "text",
         value: this.state.username,
         onChange: this.update('username')
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Password:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        placeholder: "Password",
         type: "password",
         value: this.state.password,
         onChange: this.update('password')
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, errors), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "submit",
         value: this.props.formType
-      }))));
+      }), this.renderDemo()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, buttonLog)));
     }
   }]);
 
@@ -597,10 +690,10 @@ var mapStateToProps = function mapStateToProps(_ref) {
   var errors = _ref.errors;
   return {
     errors: errors.session,
-    formType: 'signup',
+    formType: 'Signup',
     navLink: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
       to: "/login"
-    }, "log in instead")
+    }, "log in")
   };
 };
 
