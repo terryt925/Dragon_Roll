@@ -12,13 +12,28 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.formTitle = this.formTitle.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
+    this.button = this.button.bind(this);
   }
 
   formTitle() {
     if (this.props.formType === 'Login')
-      return <h3 >Welcome back!</h3>
+      return <h3 id="welcome-back">Log In</h3>
     else
-      return <h3 >Sign up for free!</h3>;
+      return <h3 id="welcome-back">Sign Up</h3>;
+  }
+
+  button() {
+      if (this.props.formType === "Login") {
+        const val = 'Log In';
+        return (
+          <input className="button" type="submit" value={val} />
+        )
+      } else {
+        const val = 'Create Account';
+        return (
+          <input className="button" type="submit" value={val} />
+        )
+      }
   }
 
   update(field) {
@@ -38,7 +53,7 @@ class SessionForm extends React.Component {
   renderDemo() {
     if (this.props.formType === "Login") {
       return (
-        <input type="submit" onClick={this.demoLogin} value="Demo Login" />
+        <input className="button" type="submit" onClick={this.demoLogin} value="Demo Login" />
       )
     }
   }
@@ -96,24 +111,28 @@ class SessionForm extends React.Component {
 
     const buttonLog = (this.props.formType === "Login") ? (
       <div >
-        <Link to="/signup" >
-          Don't have an account? Sign up today!
+        <Link to="/signup" style={{ textDecoration: 'none'}}>
+          <p id="redirect">
+            Don't have an account? Join us today!
+          </p>
         </Link >
       </div>
     ) : (
-      <div >
-        <Link to="/login" >
-          Already have an account? Log in now!
+        <div >
+        <Link to="/login" style={{ textDecoration: 'none'}}>
+          <p id="redirect">
+            Already have an account? Log in now!
+          </p>
         </Link >
       </div>
     );
     return (
-      <div >
+      <div className="container">
         <form className="form" onSubmit={this.handleSubmit}>
           {this.formTitle()}
           <br />
           <input
-
+            id="input-field"
             placeholder='Username'
             type="text"
             value={this.state.username}
@@ -121,22 +140,23 @@ class SessionForm extends React.Component {
           />
           <br />
           <input
-
+            id="input-field"
             placeholder='Password'
             type="password"
             value={this.state.password}
             onChange={this.update('password')}
           />
-          <div>
-            {errors}
-          </div>
           <br />
-          <div >
-            <input type="submit" value={this.props.formType}/>
+          <div>
+            {this.button()}
             {this.renderDemo()}
           </div>
           <div >
             {buttonLog}
+          </div>
+          <br/><br/>
+          <div>
+            {errors}
           </div>
         </form>
       </div>

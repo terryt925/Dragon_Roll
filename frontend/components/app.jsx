@@ -8,13 +8,15 @@ import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 
 export default () => (
   <div>
-    <header>
-      <Link to="/"><h1>Dragon Roll</h1></Link>
+    <header >
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <h1 className="header">Dragon Roll</h1>
+      </Link>
       <GreetingContainer />
     </header>
       <AuthRoute exact path="/signup" component={SignupContainer} />
       <AuthRoute exact path="/login" component={LoginContainer} />
-      <Route exact path="/" component={HomeContainer}/>
+      <ProtectedRoute exact path="/" component={HomeContainer}/>
       {/* <Route exact path="/" component={NavBarContainer} /> */}
   </div>
 );
