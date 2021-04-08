@@ -90,6 +90,14 @@ div .form {
   color: orange;
 }
 
+#input-field2:hover {
+  border: .1em solid orange;
+}
+
+#input-field2:hover::placeholder { 
+  color: orange;
+}
+
 .auth-error {
   text-decoration: none;
   color: red;
