@@ -100,7 +100,15 @@ div .form {
 
 .auth-error {
   text-decoration: none;
-  color: red;
+  color: rgb(197, 29, 29);
+  background: rgba(255, 255, 255, 0.986);
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 0.0625rem 0 0 #eae8e8; 
+  border: .1rem solid #c1c0c0;
+  box-sizing: border-box;
+  border-radius: 12px;
 }
 
 
