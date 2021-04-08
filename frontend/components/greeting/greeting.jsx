@@ -15,7 +15,7 @@ const Greeting = ({ currentUser, logout }) => {
     <hgroup>
       {/* <h2 >Hi, {currentUser.username}!</h2> */}
       {/* <button onClick={logout}>Log Out</button> */}
-      <input id="nav" className="button" onClick={logout} value="Log Out"/>
+      <input id="nav" className="button" onClick={logout} readOnly value="Log Out"/>
 
     </hgroup>
   );

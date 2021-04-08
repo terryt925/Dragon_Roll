@@ -261,6 +261,7 @@ var Greeting = function Greeting(_ref) {
       id: "nav",
       className: "button",
       onClick: logout,
+      readOnly: true,
       value: "Log Out"
     }));
   };
