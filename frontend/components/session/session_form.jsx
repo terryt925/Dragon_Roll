@@ -93,7 +93,7 @@ class SessionForm extends React.Component {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className="auth-error" key={`error-${i}`}>
             {error}
           </li>
         ))}
@@ -106,24 +106,28 @@ class SessionForm extends React.Component {
   render() {
 
     let errors = this.state.errors.map((el, idx) => {
-      return <li key={idx}>{el}</li>
+      return <li className="auth-error" key={idx}>{el}</li>
     })
 
+    let redirectSignup = <Link to="/signup" style={{ textDecoration: 'none' }}>
+      <p id="redirect">
+       Join us today!
+      </p>
+    </Link >;
+
+    let redirectLogin = <Link to="/login" style={{ textDecoration: 'none' }}>
+      <p id="redirect">
+        Log in now!
+      </p>
+    </Link >
+
     const buttonLog = (this.props.formType === "Login") ? (
-      <div >
-        <Link to="/signup" style={{ textDecoration: 'none'}}>
-          <p id="redirect">
-            Don't have an account? Join us today!
-          </p>
-        </Link >
+      <div>
+        <div id="redirect-none"> Don't have an account? {redirectSignup}</div>
       </div>
     ) : (
-        <div >
-        <Link to="/login" style={{ textDecoration: 'none'}}>
-          <p id="redirect">
-            Already have an account? Log in now!
-          </p>
-        </Link >
+        <div>
+          <div id="redirect-none" >Already have an account? {redirectLogin}</div>
       </div>
     );
     return (
@@ -140,7 +144,7 @@ class SessionForm extends React.Component {
           />
           <br />
           <input
-            id="input-field"
+            id="input-field2"
             placeholder='Password'
             type="password"
             value={this.state.password}
@@ -155,10 +159,11 @@ class SessionForm extends React.Component {
             {buttonLog}
           </div>
           <br/><br/>
-          <div>
-            {errors}
-          </div>
         </form>
+        <br/>
+        <div>
+          {errors}
+        </div>
       </div>
     )
   }

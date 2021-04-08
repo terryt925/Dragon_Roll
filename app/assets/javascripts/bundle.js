@@ -190,6 +190,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _greeting_greeting_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./greeting/greeting_container */ "./frontend/components/greeting/greeting_container.js");
 /* harmony import */ var _home_home_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home/home_container */ "./frontend/components/home/home_container.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _utils_route_util__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/route_util */ "./frontend/utils/route_util.jsx");
 
 
@@ -197,6 +198,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+var NoMatchPage = function NoMatchPage() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
+    className: "error-page"
+  }, "404 - Not found");
+};
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
@@ -206,7 +214,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
     className: "header"
-  }, "Dragon Roll")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_3__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_5__.AuthRoute, {
+  }, "Dragon Roll")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_3__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_5__.AuthRoute, {
     exact: true,
     path: "/signup",
     component: _session_signup_container__WEBPACK_IMPORTED_MODULE_1__.default
@@ -218,7 +226,9 @@ __webpack_require__.r(__webpack_exports__);
     exact: true,
     path: "/",
     component: _home_home_container__WEBPACK_IMPORTED_MODULE_4__.default
-  }));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+    component: NoMatchPage
+  })));
 });
 
 /***/ }),
@@ -647,6 +657,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
     value: function renderErrors() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, this.props.errors.map(function (error, i) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+          className: "auth-error",
           key: "error-".concat(i)
         }, error);
       }));
@@ -656,24 +667,31 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var errors = this.state.errors.map(function (el, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+          className: "auth-error",
           key: idx
         }, el);
       });
-      var buttonLog = this.props.formType === "Login" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      var redirectSignup = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
         to: "/signup",
         style: {
           textDecoration: 'none'
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         id: "redirect"
-      }, "Don't have an account? Join us today!"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      }, "Join us today!"));
+      var redirectLogin = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
         to: "/login",
         style: {
           textDecoration: 'none'
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         id: "redirect"
-      }, "Already have an account? Log in now!")));
+      }, "Log in now!"));
+      var buttonLog = this.props.formType === "Login" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        id: "redirect-none"
+      }, " Don't have an account? ", redirectSignup)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        id: "redirect-none"
+      }, "Already have an account? ", redirectLogin));
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
@@ -686,12 +704,12 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         value: this.state.username,
         onChange: this.update('username')
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        id: "input-field",
+        id: "input-field2",
         placeholder: "Password",
         type: "password",
         value: this.state.password,
         onChange: this.update('password')
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, this.button(), this.renderDemo()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, buttonLog), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, errors)));
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, this.button(), this.renderDemo()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, buttonLog), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, errors));
     }
   }]);
 
