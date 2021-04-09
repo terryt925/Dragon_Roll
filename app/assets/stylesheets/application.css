@@ -34,7 +34,7 @@ header {
 .header {
   font-size: 80px;
   font-family: 'Bebas Neue', cursive;
-  color: orange;
+  color: #f47521;
   display: flex;
   justify-content: center;
   text-decoration: none;
