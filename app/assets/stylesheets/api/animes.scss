@@ -1,3 +1,31 @@
 // Place all the styles related to the api::animes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.thumbnail {
+    width: 127px;
+    display: block;
+    background: #fff;
+    padding: 12px;
+    margin: 12px;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+.thumbnail:hover {
+  background-color: rgb(224, 224, 224);
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  margin-right: 250px;
+  margin-left: 250px;
+  background-color: rgb(224, 223, 223);
+  margin-top: 50px;
+}
