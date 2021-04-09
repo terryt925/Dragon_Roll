@@ -130,26 +130,29 @@ class SessionForm extends React.Component {
           <div id="redirect-none" >Already have an account? {redirectLogin}</div>
       </div>
     );
+
     return (
       <div className="container">
         <form className="form" onSubmit={this.handleSubmit}>
           {this.formTitle()}
           <br />
+          <label id="placeholder">Username</label>
           <input
             id="input-field"
-            placeholder='Username'
+            // placeholder='Username'
             type="text"
             value={this.state.username}
             onChange={this.update('username')}
           />
           <br />
-          <input
-            id="input-field2"
-            placeholder='Password'
-            type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-          />
+          <label id="placeholder">Password</label>
+            <input
+              id="input-field2"
+              // placeholder='Password'
+              type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+            />
           <br />
           <div>
             {this.button()}
@@ -161,7 +164,7 @@ class SessionForm extends React.Component {
           <br/><br/>
         </form>
         <br/>
-        <div>
+        <div className="organize">
           {errors}
         </div>
       </div>
