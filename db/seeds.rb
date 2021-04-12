@@ -94,13 +94,17 @@ fire_force = Anime.create!(
   synopsis: "Tokyo is burning, and citizens are mysteriously suffering from spontaneous human combustion all throughout the city! Responsible for snuffing out this inferno is the Fire Force, and Shinra is ready to join their fight. Now, as part of Company 8, he’ll use his devil’s footprints to help keep the city from turning to ash! But his past and a burning secret behind the scenes could set everything ablaze."
 )
 
-bleach = Anime.create!(
-  title: "Bleach",
-  synopsis: "BLEACH follows the story of Ichigo Kurosaki. When Ichigo meets Rukia he finds his life is changed forever."
+your_name = Anime.create!(
+  title: "Your Name",
+  synopsis: "Mitsuha Miyamizu, a high school girl, yearns to live the life of a boy in the bustling city of Tokyo—a dream that stands in stark contrast to her present life in the countryside. Meanwhile in the city, Taki Tachibana lives a busy life as a high school student while juggling his part-time job and hopes for a future in architecture.
+
+One day, Mitsuha awakens in a room that is not her own and suddenly finds herself living the dream life in Tokyo—but in Taki's body! Elsewhere, Taki finds himself living Mitsuha's life in the humble countryside. In pursuit of an answer to this strange phenomenon, they begin to search for one another.
+
+Kimi no Na wa. revolves around Mitsuha and Taki's actions, which begin to have a dramatic impact on each other's lives, weaving them into a fabric held together by fate and circumstance."
 )
 
-anime_bleach = URI.open('https://dragon-roll-aa-dev.s3-us-west-1.amazonaws.com/bleach.jpg')
-bleach.photo.attach(io: anime_bleach, filename: "bleach.jpg")
+anime_your_name = URI.open('https://dragon-roll-aa-dev.s3-us-west-1.amazonaws.com/your_name.jpg')
+your_name.photo.attach(io: anime_your_name, filename: "your_name.jpg")
 
 anime_fire_force = URI.open('https://dragon-roll-aa-dev.s3-us-west-1.amazonaws.com/fire_force.jpg')
 fire_force.photo.attach(io: anime_fire_force, filename: "fire_force.jpg")

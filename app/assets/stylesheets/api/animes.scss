@@ -22,6 +22,7 @@
 .thumbnail:hover {
   background-color: white;
   box-shadow: 0 1px 1px black;
+  transform: scale(1.03);
 }
 
 .thumbnails {
@@ -46,6 +47,8 @@
   margin-bottom: 15px;
   font-weight: bold;
   font-family: sans-serif;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 // #example2 {
@@ -68,7 +71,13 @@ body {
   height: 250px;
   width: 1000px;
   margin-top: 30px;
-  background-color: white;
+  cursor: pointer;
+  border-style: rgb(87, 86, 86) solid;
+}
+
+.header-image:hover {
+  box-shadow: 0 1px 1px black;
+  transform: scale(1.03);
 }
 
 .anime-div {
