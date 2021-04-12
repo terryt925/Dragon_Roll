@@ -10,8 +10,9 @@ class AnimeIndexItem extends React.Component {
 
     return (
       <ul className="thumbnail">
-          <li>{this.props.anime.title}</li>
-        </ul>
+        <img src={this.props.anime.photo_url} className="image"/>
+        <li className="image-text">{this.props.anime.title}</li>
+      </ul>
     )
   }
 }
