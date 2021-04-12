@@ -281,8 +281,12 @@ var AnimeIndex = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        id: "example2"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "anime-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        className: "header-image",
+        src: "/header.jpg",
+        alt: ""
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "thumbnails"
       }, this.props.animes.map(function (anime, id) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_anime_index_item__WEBPACK_IMPORTED_MODULE_1__.default, {

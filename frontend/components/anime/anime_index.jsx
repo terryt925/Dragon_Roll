@@ -12,7 +12,8 @@ class AnimeIndex extends React.Component {
   render() {
 
     return (
-      <div id="example2" >
+      <div className="anime-div">
+        <img className="header-image" src={"/header.jpg"} alt=""/>
         <div className="thumbnails" >
           {
             this.props.animes.map((anime, id) => (
