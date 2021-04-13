@@ -4,4 +4,8 @@ class Anime < ApplicationRecord
 
   has_one_attached :photo
 
+  has_many :episodes,
+    foreign_key: :anime_id,
+    class_name: :Episode
+
 end

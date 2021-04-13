@@ -11,7 +11,9 @@ const Greeting = ({ currentUser, logout }) => {
   const personalGreeting = () => (
     <hgroup>
       <input id="nav" className="button" onClick={logout} readOnly value="Log Out"/>
-
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <input id="anime" className="button" readOnly value="Anime"/>
+      </Link>
     </hgroup>
   );
 
