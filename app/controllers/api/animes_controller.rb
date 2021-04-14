@@ -7,6 +7,7 @@ class Api::AnimesController < ApplicationController
 
   def show 
     @anime = Anime.find_by(id: params[:id])
+
   end
 
 end

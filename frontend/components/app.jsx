@@ -7,7 +7,8 @@ import { Route, Link, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 import AnimeContainer from './anime/anime_index_container';
 import Banner from './banner/banner_container'
-
+import EpisodeContainer from './anime/anime_show_container';
+// import EpisodeIndexItem from './anime/anime_show_item';
 
 const NoMatchPage = () => {
   return (
@@ -28,6 +29,8 @@ export default () => (
         <AuthRoute exact path="/signup" component={SignupContainer} />
         <AuthRoute exact path="/login" component={LoginContainer} />
         <ProtectedRoute exact path="/" component={AnimeContainer}/>
+        <ProtectedRoute exact path="/animes/:id" component={EpisodeContainer} />
+      {/* <ProtectedRoute exact path="/animes/:id/episodes/:id" component={EpisodeIndexItem} /> */}
         <Route component={NoMatchPage} />
     </Switch>
   </div>

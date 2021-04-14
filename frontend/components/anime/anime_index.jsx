@@ -1,6 +1,6 @@
 import React from 'react';
 import AnimeIndexItem from './anime_index_item';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 class AnimeIndex extends React.Component {
@@ -9,14 +9,17 @@ class AnimeIndex extends React.Component {
   }
 
   render() {
-
+    
     return (
       <div >
-        {/* <img className="header-image" src={"/header.jpg"} alt="Your Name"/> */}
+        <p className="anime-heading" >Anime</p>
+        <p className="line" ></p>
         <div className="thumbnails" >
           {
-            this.props.animes.map((anime, id) => (
-              <AnimeIndexItem key={id} anime={anime}  />
+            this.props.animes.map((anime) => (
+              <Link to={`/animes/${anime.id}`} style={{ textDecoration: 'none' }}>
+                <AnimeIndexItem key={anime.id} anime={anime}  />
+              </Link>
             ))
           }
         </div>

@@ -9,6 +9,7 @@ const Banner = ({ currentUser}) => {
     <div className="anime-div">
       <Link to="/" style={{ textDecoration: 'none' }}>
         <img className="header-image" src={"/header.jpg"} alt="Your Name" />
+        {/* <p className="header-text" style={{ textDecoration: 'none' }}>WATCH NOW</p> */}
       </Link>
     </div>
   );

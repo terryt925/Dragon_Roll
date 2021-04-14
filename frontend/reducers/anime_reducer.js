@@ -10,7 +10,7 @@ const animeReducer = (state = {}, action) => {
     case RECEIVE_ALL_ANIME:
       return Object.assign({}, state, action.animes)
     case RECEIVE_ANIME:
-      return Object.assign({}, state, { [action.anime.id]: action.anime })
+      return Object.assign({}, state, action.anime )
     default:
       return state;
   }

@@ -13,3 +13,7 @@ export const fetchAnime = (animeId) => (
   })
 )
 
+// $.ajax({
+//   method: 'GET',
+//   url: '/api/animes/0'
+// })

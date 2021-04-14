@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -10,10 +10,10 @@ const Greeting = ({ currentUser, logout }) => {
   );
   const personalGreeting = () => (
     <hgroup>
+      <NavLink activeClassName="selected"  exact to="/" >
+        <input id="anime" className="navi-button" readOnly value="Anime"/>
+      </NavLink>
       <input id="nav" className="button" onClick={logout} readOnly value="Log Out"/>
-      <Link to="/" style={{ textDecoration: 'none' }}>
-        <input id="anime" className="button" readOnly value="Anime"/>
-      </Link>
     </hgroup>
   );
 

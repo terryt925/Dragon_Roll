@@ -16,7 +16,7 @@ const receiveAnime = anime => ({
 
 export const requestAnimes = () => dispatch => (
   APIUtil.fetchAnimes()
-    .then(events => dispatch(receiveAllAnime(events)))
+    .then(animes => dispatch(receiveAllAnime(animes)))
 )
 
 export const requestAnime = (animeId) => dispatch => (

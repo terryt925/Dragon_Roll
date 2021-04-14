@@ -9,15 +9,19 @@ require 'open-uri'
 
 User.delete_all
 Anime.delete_all
+Episode.delete_all
+
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('animes')
+ActiveRecord::Base.connection.reset_pk_sequence!('episodes')
+
 
 demo = User.create!(
   username: 'demo',
   password: 'password'
 )
 
-
+# Anime seeds
 
 one_piece = Anime.create!(
    title: 'One Piece',
@@ -154,4 +158,10 @@ anime_attack_on_titan = URI.open('https://dragon-roll-aa-dev.s3-us-west-1.amazon
 attack_on_titan.photo.attach(io: anime_attack_on_titan, filename: "attack_on_titan.jpg")
 
 
+# Episode seeds
 
+one_piece_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 1,
+  video_link: "https://www.youtube.com/watch?v=lXCWb-hkJp4"
+)
