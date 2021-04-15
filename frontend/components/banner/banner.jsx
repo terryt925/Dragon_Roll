@@ -7,7 +7,7 @@ const Banner = ({ currentUser}) => {
   );
   const personalBanner = () => (
     <div className="anime-div">
-      <Link to="/" style={{ textDecoration: 'none' }}>
+      <Link to="/animes/16" style={{ textDecoration: 'none' }}>
         <img className="header-image" src={"/header.jpg"} alt="Your Name" />
         {/* <p className="header-text" style={{ textDecoration: 'none' }}>WATCH NOW</p> */}
       </Link>

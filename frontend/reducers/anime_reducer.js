@@ -8,7 +8,7 @@ const animeReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_ANIME:
-      return Object.assign({}, state, action.animes)
+      return Object.assign({}, action.animes)
     case RECEIVE_ANIME:
       return Object.assign({}, state, action.anime )
     default:

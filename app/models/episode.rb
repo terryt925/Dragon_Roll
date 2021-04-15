@@ -1,6 +1,7 @@
 class Episode < ApplicationRecord
 
-  validates :title, :video_link, presence: true, uniqueness: true
+  validates :video_link, presence: true, uniqueness: true
+  validates :title, presence: true
 
   belongs_to :anime,
     foreign_key: :anime_id,

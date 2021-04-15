@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_222650) do
+ActiveRecord::Schema.define(version: 2021_04_15_051605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_04_12_222650) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["anime_id"], name: "index_episodes_on_anime_id"
-    t.index ["title"], name: "index_episodes_on_title", unique: true
+    t.index ["title"], name: "index_episodes_on_title"
     t.index ["video_link"], name: "index_episodes_on_video_link", unique: true
   end
 

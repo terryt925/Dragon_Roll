@@ -9,7 +9,7 @@ const Greeting = ({ currentUser, logout }) => {
      </nav>
   );
   const personalGreeting = () => (
-    <hgroup>
+    <hgroup >
       <NavLink activeClassName="selected"  exact to="/" >
         <input id="anime" className="navi-button" readOnly value="Anime"/>
       </NavLink>

@@ -29,6 +29,7 @@ header {
   display: flex;
   justify-content: center;
   box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);
+  
 
 }
 
@@ -43,6 +44,7 @@ header {
   text-shadow: black 1px 1px;
   height: 100%;
   width: 350px;
+
 }
 
 .header:hover {
@@ -55,7 +57,10 @@ header {
   right: 5px; 
   width: 100px; 
   line-height: 2.7;
+
 }
+
+
 
 #anime {
   position: absolute; 
@@ -63,6 +68,7 @@ header {
   right: 125px; 
   width: 100px; 
   line-height: 2.7;
+
 }
 
 .button {

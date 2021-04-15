@@ -45,7 +45,7 @@ attack_on_titan = Anime.create!(
 
 dragon_ball_super = Anime.create!(
   title: 'Dragon Ball Super',
-  synopsis: "Goku is a young man obsessed with fighting the strongest around. Goku and his friends aim to test their skills with the strongest in the known universe. What they didn't know was they would be fighting to keep their universe from being destroyed."
+  synopsis: "After 18 years, we have the newest Dragon Ball story from creator Akira Toriyama. With Majin Buu defeated, Goku has taken a completely new role as...a radish farmer?! With Earth at peace, our heroes have settled into normal lives. But they can’t get too comfortable. Far away, the powerful God of Destruction, Beerus, awakens to a prophecy revealing his demise at the hands of an even more formidable being. When his search for the Saiyan God brings him to Earth, can Goku and his friends take on their strongest foe yet?"
 )
 
 naruto_shippuden = Anime.create!(
@@ -55,7 +55,7 @@ naruto_shippuden = Anime.create!(
 
 black_clover = Anime.create!(
   title: 'Black Clover',
-  synopsis: "Black Clover is set in a world where people who inhabit it have magical powers. A young man named Asta is born without any magic power, but against all odds, he was given a grimoire. Now that young man is on his journey to become the Wizard King."
+  synopsis: "In a world where magic is everything, Asta and Yuno are both found abandoned at a church on the same day. While Yuno is gifted with exceptional magical powers, Asta is the only one in this world without any. At the age of fifteen, both receive grimoires, magic books that amplify their holder’s magic. Asta’s is a rare Grimoire of Anti-Magic that negates and repels his opponent’s spells. Being opposite but good rivals, Yuno and Asta are ready for the hardest of challenges to achieve their common dream: to be the Wizard King. Giving up is never an option!"
 )
 
 dr_stone = Anime.create!(
@@ -158,10 +158,1162 @@ anime_attack_on_titan = URI.open('https://dragon-roll-aa-dev.s3-us-west-1.amazon
 attack_on_titan.photo.attach(io: anime_attack_on_titan, filename: "attack_on_titan.jpg")
 
 
-# Episode seeds
+# EPISODE SEEDS
+
+
+
+# one piece
 
 one_piece_1 = Episode.create(
   title: "Episode 1",
   anime_id: 1,
-  video_link: "https://www.youtube.com/watch?v=lXCWb-hkJp4"
+  video_link: "https://www.youtube.com/embed/lXCWb-hkJp4"
 )
+
+one_piece_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 1,
+  video_link: "https://www.youtube.com/embed/9iNOXZA05PA"
+)
+
+one_piece_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 1,
+  video_link: "https://www.youtube.com/embed/c6PR9xsNZJM"
+)
+
+one_piece_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 1,
+  video_link: "https://www.youtube.com/embed/VKoViDjneHI"
+)
+
+one_piece_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 1,
+  video_link: "https://www.youtube.com/embed/XH8YtiGyJe4"
+)
+
+one_piece_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 1,
+  video_link: "https://www.youtube.com/embed/zVwEGwX1HYk"
+)
+
+one_piece_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 1,
+  video_link: "https://www.youtube.com/embed/27P3wPLxcUs"
+)
+
+one_piece_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 1,
+  video_link: "https://www.youtube.com/embed/Z-n-wuP1sjE"
+)
+
+one_piece_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 1,
+  video_link: "https://www.youtube.com/embed/fda10_NjxYY"
+)
+
+one_piece_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 1,
+  video_link: "https://www.youtube.com/embed/q45IbVQYFmA"
+)
+
+one_piece_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 1,
+  video_link: "https://www.youtube.com/embed/TjyFNU5sKhM"
+)
+
+one_piece_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 1,
+  video_link: "https://www.youtube.com/embed/apg-O1WMxIU"
+)
+
+
+
+# jujutsu_kaisen
+
+jujutsu_kaisen_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 2,
+  video_link: "https://www.youtube.com/embed/iGWyN2Lq36M"
+)
+
+jujutsu_kaisen_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 2,
+  video_link: "https://www.youtube.com/embed/_0w5loPnsmw"
+)
+
+jujutsu_kaisen_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 2,
+  video_link: "https://www.youtube.com/embed/1_YMejXYur0"
+)
+
+jujutsu_kaisen_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 2,
+  video_link: "https://www.youtube.com/embed/Xaqo0YZkeWw"
+)
+
+jujutsu_kaisen_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 2,
+  video_link: "https://www.youtube.com/embed/Ep3kYxOfNQc"
+)
+
+jujutsu_kaisen_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 2,
+  video_link: "https://www.youtube.com/embed/QAe8aGCZ3wA"
+)
+
+jujutsu_kaisen_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 2,
+  video_link: "https://www.youtube.com/embed/sBSUEKeX2VE"
+)
+
+jujutsu_kaisen_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 2,
+  video_link: "https://www.youtube.com/embed/_Xrnh8rIFLE"
+)
+
+jujutsu_kaisen_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 2,
+  video_link: "https://www.youtube.com/embed/Guc_1dAORcw"
+)
+
+jujutsu_kaisen_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 2,
+  video_link: "https://www.youtube.com/embed/f_Bo3D8WnQg"
+)
+
+jujutsu_kaisen_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 2,
+  video_link: "https://www.youtube.com/embed/MKh_CaCD2YU"
+)
+
+jujutsu_kaisen_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 2,
+  video_link: "https://www.youtube.com/embed/C4Qp0QXsohA"
+)
+
+
+
+# My Hero Academia
+
+my_hero_academia_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 3,
+  video_link: "https://www.youtube.com/embed/Sw4Em1wc8es"
+)
+
+my_hero_academia_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 3,
+  video_link: "https://www.youtube.com/embed/e6Cw1Ux8wVg"
+)
+
+my_hero_academia_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 3,
+  video_link: "https://www.youtube.com/embed/ELJ5ZChwA5U"
+)
+
+my_hero_academia_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 3,
+  video_link: "https://www.youtube.com/embed/jCuM1byygqA"
+)
+
+my_hero_academia_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 3,
+  video_link: "https://www.youtube.com/embed/Bo8DFMG8nVI"
+)
+
+my_hero_academia_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 3,
+  video_link: "https://www.youtube.com/embed/RDGRhHd_n1I"
+)
+
+my_hero_academia_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 3,
+  video_link: "https://www.youtube.com/embed/zqwga6pt5zA"
+)
+
+my_hero_academia_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 3,
+  video_link: "https://www.youtube.com/embed/jcXYSti7EsA"
+)
+
+my_hero_academia_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 3,
+  video_link: "https://www.youtube.com/embed/2J0M0bflxJw"
+)
+
+my_hero_academia_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 3,
+  video_link: "https://www.youtube.com/embed/ze6QF9tNEYQ"
+)
+
+my_hero_academia_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 3,
+  video_link: "https://www.youtube.com/embed/kGPuubt5X1s"
+)
+
+my_hero_academia_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 3,
+  video_link: "https://www.youtube.com/embed/_8QIcNKYtI0"
+)
+
+
+# attack on titan
+
+attack_on_titan_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 4,
+  video_link: "https://www.youtube.com/embed/tQw3oYUTejs"
+)
+
+attack_on_titan_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 4,
+  video_link: "https://www.youtube.com/embed/YK6alpnYuIw"
+)
+
+attack_on_titan_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 4,
+  video_link: "https://www.youtube.com/embed/amIv8efqmqU"
+)
+
+attack_on_titan_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 4,
+  video_link: "https://www.youtube.com/embed/rgpdRu_1-NI"
+)
+
+attack_on_titan_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 4,
+  video_link: "https://www.youtube.com/embed/Eod94wD32Q0"
+)
+
+attack_on_titan_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 4,
+  video_link: "https://www.youtube.com/embed/6Dg-49qGjVU"
+)
+
+attack_on_titan_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 4,
+  video_link: "https://www.youtube.com/embed/EaGn7HISNQ0"
+)
+
+attack_on_titan_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 4,
+  video_link: "https://www.youtube.com/embed/T_NTFF6x3Fk"
+)
+
+attack_on_titan_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 4,
+  video_link: "https://www.youtube.com/embed/9YFcmFDHSX4"
+)
+
+attack_on_titan_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 4,
+  video_link: "https://www.youtube.com/embed/k4tQbHPoT-c"
+)
+
+attack_on_titan_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 4,
+  video_link: "https://www.youtube.com/embed/_3DOU4qzLMc"
+)
+
+attack_on_titan_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 4,
+  video_link: "https://www.youtube.com/embed/Ha3ACZPShzA"
+)
+
+
+# dragon ball super
+
+
+dragon_ball_super_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 5,
+  video_link: "https://www.youtube.com/embed/9CmnDmZPjcM"
+)
+
+dragon_ball_super_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 5,
+  video_link: "https://www.youtube.com/embed/D7CUkZv4R68"
+)
+
+dragon_ball_super_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 5,
+  video_link: "https://www.youtube.com/embed/1_2ibm2IktM"
+)
+
+dragon_ball_super_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 5,
+  video_link: "https://www.youtube.com/embed/we_gvfSLaH4"
+)
+
+dragon_ball_super_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 5,
+  video_link: "https://www.youtube.com/embed/D5rgtNJspCY"
+)
+
+dragon_ball_super_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 5,
+  video_link: "https://www.youtube.com/embed/zI81hDdLgqc"
+)
+
+dragon_ball_super_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 5,
+  video_link: "https://www.youtube.com/embed/q6doy8BYmqs"
+)
+
+dragon_ball_super_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 5,
+  video_link: "https://www.youtube.com/embed/uQoQCv7R1hA"
+)
+
+dragon_ball_super_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 5,
+  video_link: "https://www.youtube.com/embed/hsmrnWKvVn0"
+)
+
+dragon_ball_super_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 5,
+  video_link: "https://www.youtube.com/embed/T-jfe04T9po"
+)
+
+dragon_ball_super_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 5,
+  video_link: "https://www.youtube.com/embed/mWoLt5bUvs4"
+)
+
+dragon_ball_super_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 5,
+  video_link: "https://www.youtube.com/embed/RPchPARcECY"
+)
+
+
+# Naruto Shippuden
+
+naruto_shippuden_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 6,
+  video_link: "https://www.youtube.com/embed/NGNRwcMgrqM"
+)
+
+naruto_shippuden_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 6,
+  video_link: "https://www.youtube.com/embed/jIGCh-eXc3k"
+)
+
+naruto_shippuden_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 6,
+  video_link: "https://www.youtube.com/embed/tcEnwc0mdRI"
+)
+
+naruto_shippuden_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 6,
+  video_link: "https://www.youtube.com/embed/4LvP00uDnm0"
+)
+
+naruto_shippuden_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 6,
+  video_link: "https://www.youtube.com/embed/iXeH7emwxwE"
+)
+
+naruto_shippuden_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 6,
+  video_link: "https://www.youtube.com/embed/HaMdywkuOmQ"
+)
+
+naruto_shippuden_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 6,
+  video_link: "https://www.youtube.com/embed/5lHzzix58Po"
+)
+
+naruto_shippuden_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 6,
+  video_link: "https://www.youtube.com/embed/ynZ3IbBdWiQ"
+)
+
+naruto_shippuden_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 6,
+  video_link: "https://www.youtube.com/embed/4ipEW4rMuKc"
+)
+
+naruto_shippuden_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 6,
+  video_link: "https://www.youtube.com/embed/pTHwunctXlA"
+)
+
+naruto_shippuden_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 6,
+  video_link: "https://www.youtube.com/embed/rlKeDJFusl4"
+)
+
+naruto_shippuden_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 6,
+  video_link: "https://www.youtube.com/embed/mBafUDVHGL8"
+)
+
+
+# Black Clover
+
+
+black_clover_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 7,
+  video_link: "https://www.youtube.com/embed/bucDYBQqWLE"
+)
+
+black_clover_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 7,
+  video_link: "https://www.youtube.com/embed/UVkT6XS-bQY"
+)
+
+black_clover_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 7,
+  video_link: "https://www.youtube.com/embed/y7F2RY_AaMM"
+)
+
+black_clover_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 7,
+  video_link: "https://www.youtube.com/embed/gdedhGhSPpg"
+)
+
+black_clover_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 7,
+  video_link: "https://www.youtube.com/embed/RLbHPdCeLAg"
+)
+
+black_clover_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 7,
+  video_link: "https://www.youtube.com/embed/1DedgoWMMwg"
+)
+
+black_clover_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 7,
+  video_link: "https://www.youtube.com/embed/bqHswO6bJu4"
+)
+
+black_clover_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 7,
+  video_link: "https://www.youtube.com/embed/QeFUq2gHo1c"
+)
+
+black_clover_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 7,
+  video_link: "https://www.youtube.com/embed/VEA4DHHt588"
+)
+
+black_clover_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 7,
+  video_link: "https://www.youtube.com/embed/VIJvTGufho8"
+)
+
+black_clover_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 7,
+  video_link: "https://www.youtube.com/embed/aYtVJ7gYIWw"
+)
+
+black_clover_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 7,
+  video_link: "https://www.youtube.com/embed/MORpybHP4po"
+)
+
+
+# dr stone
+
+dr_stone_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 8,
+  video_link: "https://www.youtube.com/embed/SKfor6O-8hs"
+)
+
+dr_stone_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 8,
+  video_link: "https://www.youtube.com/embed/O3tWTMMYi4Q"
+)
+
+dr_stone_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 8,
+  video_link: "https://www.youtube.com/embed/xoMBViXHckY"
+)
+
+dr_stone_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 8,
+  video_link: "https://www.youtube.com/embed/YJ4fMCnMFBk"
+)
+
+dr_stone_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 8,
+  video_link: "https://www.youtube.com/embed/gvMH73Y-nLQ"
+)
+
+dr_stone_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 8,
+  video_link: "https://www.youtube.com/embed/bTpkLBNM7Ng"
+)
+
+dr_stone_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 8,
+  video_link: "https://www.youtube.com/embed/SHL_EvxCjpo"
+)
+
+dr_stone_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 8,
+  video_link: "https://www.youtube.com/embed/z6mDuBsQEKk"
+)
+
+dr_stone_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 8,
+  video_link: "https://www.youtube.com/embed/NXUImP_D4JY"
+)
+
+dr_stone_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 8,
+  video_link: "https://www.youtube.com/embed/zA5fJLP7VN0"
+)
+
+dr_stone_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 8,
+  video_link: "https://www.youtube.com/embed/xSQEOccIRfc"
+)
+
+dr_stone_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 8,
+  video_link: "https://www.youtube.com/embed/OxJpExWfeIE"
+)
+
+
+# boruto
+
+boruto_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 9,
+  video_link: "https://www.youtube.com/embed/EdCUezHQERc"
+)
+
+boruto_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 9,
+  video_link: "https://www.youtube.com/embed/A-n1-OERU7w"
+)
+
+boruto_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 9,
+  video_link: "https://www.youtube.com/embed/Wy0_i7cOj20"
+)
+
+boruto_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 9,
+  video_link: "https://www.youtube.com/embed/LAERcb53v54"
+)
+
+boruto_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 9,
+  video_link: "https://www.youtube.com/embed/5FabYlfVpjo"
+)
+
+boruto_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 9,
+  video_link: "https://www.youtube.com/embed/_V1jcrr2EtI"
+)
+
+boruto_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 9,
+  video_link: "https://www.youtube.com/embed/HWa1qF6JZM0"
+)
+
+boruto_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 9,
+  video_link: "https://www.youtube.com/embed/gD9eSNf_gdA"
+)
+
+boruto_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 9,
+  video_link: "https://www.youtube.com/embed/9udfKOihDKY"
+)
+
+boruto_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 9,
+  video_link: "https://www.youtube.com/embed/AskFGpw5Ifo"
+)
+
+boruto_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 9,
+  video_link: "https://www.youtube.com/embed/O8NTR1mBc-g"
+)
+
+boruto_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 9,
+  video_link: "https://www.youtube.com/embed/XwvinWYO8wU"
+)
+
+
+# demon slayer
+
+demon_slayer_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 10,
+  video_link: "https://www.youtube.com/embed/Si_J2oUJAkw"
+)
+
+demon_slayer_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 10,
+  video_link: "https://www.youtube.com/embed/1Cr607IAL4k"
+)
+
+demon_slayer_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 10,
+  video_link: "https://www.youtube.com/embed/TowgLJvsBs4"
+)
+
+demon_slayer_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 10,
+  video_link: "https://www.youtube.com/embed/OHb_78X99pY"
+)
+
+demon_slayer_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 10,
+  video_link: "https://www.youtube.com/embed/O0g4rpjFizk"
+)
+
+demon_slayer_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 10,
+  video_link: "https://www.youtube.com/embed/7xkFC2T-CuU"
+)
+
+demon_slayer_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 10,
+  video_link: "https://www.youtube.com/embed/83z6jx4Lr3U"
+)
+
+demon_slayer_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 10,
+  video_link: "https://www.youtube.com/embed/WcW28A5keDA"
+)
+
+demon_slayer_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 10,
+  video_link: "https://www.youtube.com/embed/e9BCFlcog7Y"
+)
+
+demon_slayer_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 10,
+  video_link: "https://www.youtube.com/embed/Z7qniGEcRnA"
+)
+
+demon_slayer_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 10,
+  video_link: "https://www.youtube.com/embed/XI8JhyoA8VI"
+)
+
+demon_slayer_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 10,
+  video_link: "https://www.youtube.com/embed/sv8fzznqXK0"
+)
+
+
+# haikyu!!
+
+haikyu_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 11,
+  video_link: "https://www.youtube.com/embed/rJFZ5rrD6mE"
+)
+
+haikyu_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 11,
+  video_link: "https://www.youtube.com/embed/dYU96jRGTVw"
+)
+
+haikyu_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 11,
+  video_link: "https://www.youtube.com/embed/Kzxtdf-vqhk"
+)
+
+haikyu_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 11,
+  video_link: "https://www.youtube.com/embed/fRbaDZyD8is"
+)
+
+haikyu_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 11,
+  video_link: "https://www.youtube.com/embed/LduCUqqHew0"
+)
+
+haikyu_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 11,
+  video_link: "https://www.youtube.com/embed/Rz_WwJc3WPs"
+)
+
+haikyu_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 11,
+  video_link: "https://www.youtube.com/embed/Xf7lyjUF9n0"
+)
+
+haikyu_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 11,
+  video_link: "https://www.youtube.com/embed/dQ1M0wh0mZA"
+)
+
+haikyu_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 11,
+  video_link: "https://www.youtube.com/embed/2RENGrAO3Ao"
+)
+
+haikyu_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 11,
+  video_link: "https://www.youtube.com/embed/gJLF0Wa1G6U"
+)
+
+haikyu_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 11,
+  video_link: "https://www.youtube.com/embed/j3JuAf-G92A"
+)
+
+haikyu_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 11,
+  video_link: "https://www.youtube.com/embed/p_He7tkeb24"
+)
+
+
+# hunter x hunter
+
+hunter_x_hunter_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 12,
+  video_link: "https://www.youtube.com/embed/6oPCI2-mwKI"
+)
+
+hunter_x_hunter_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 12,
+  video_link: "https://www.youtube.com/embed/MCNpY7Yo2o4"
+)
+
+hunter_x_hunter_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 12,
+  video_link: "https://www.youtube.com/embed/BUmq2KvKvQw"
+)
+
+hunter_x_hunter_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 12,
+  video_link: "https://www.youtube.com/embed/2BjSNRNSHg4"
+)
+
+hunter_x_hunter_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 12,
+  video_link: "https://www.youtube.com/embed/5HTUa1rLOSs"
+)
+
+hunter_x_hunter_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 12,
+  video_link: "https://www.youtube.com/embed/mFO-XIc9b-g"
+)
+
+hunter_x_hunter_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 12,
+  video_link: "https://www.youtube.com/embed/Ol9HFQsmW5Q"
+)
+
+hunter_x_hunter_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 12,
+  video_link: "https://www.youtube.com/embed/PdpEJytRqrk"
+)
+
+hunter_x_hunter_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 12,
+  video_link: "https://www.youtube.com/embed/_pu2RYaRSZI"
+)
+
+hunter_x_hunter_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 12,
+  video_link: "https://www.youtube.com/embed/nYPeX0Cw5uw"
+)
+
+hunter_x_hunter_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 12,
+  video_link: "https://www.youtube.com/embed/4rk2vvNOH8E"
+)
+
+hunter_x_hunter_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 12,
+  video_link: "https://www.youtube.com/embed/6-jeuCauDEw"
+)
+
+
+# jojo
+
+jojo_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 13,
+  video_link: "https://www.youtube.com/embed/H9vCggXAkEw"
+)
+
+jojo_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 13,
+  video_link: "https://www.youtube.com/embed/rr5ys6deAaw"
+)
+
+jojo_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 13,
+  video_link: "https://www.youtube.com/embed/jB_sG51B3zA"
+)
+
+jojo_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 13,
+  video_link: "https://www.youtube.com/embed/7bspT6NonQs"
+)
+
+jojo_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 13,
+  video_link: "https://www.youtube.com/embed/qo13zGL2Vcs"
+)
+
+jojo_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 13,
+  video_link: "https://www.youtube.com/embed/3p46R_5j_PU"
+)
+
+jojo_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 13,
+  video_link: "https://www.youtube.com/embed/Pavv_E2Uss8"
+)
+
+jojo_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 13,
+  video_link: "https://www.youtube.com/embed/CQFDsWTWtCQ"
+)
+
+jojo_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 13,
+  video_link: "https://www.youtube.com/embed/_GVilhxrAk4"
+)
+
+jojo_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 13,
+  video_link: "https://www.youtube.com/embed/nqPiD6OnsUU"
+)
+
+jojo_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 13,
+  video_link: "https://www.youtube.com/embed/2_bjO9lNCzM"
+)
+
+jojo_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 13,
+  video_link: "https://www.youtube.com/embed/ai_Ga6JjiGs"
+)
+
+
+# naruto
+
+naruto_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 14,
+  video_link: "https://www.youtube.com/embed/i8kf0-QqnR4"
+)
+
+naruto_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 14,
+  video_link: "https://www.youtube.com/embed/08gd5WqBy_4"
+)
+
+naruto_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 14,
+  video_link: "https://www.youtube.com/embed/zd44o_irLgo"
+)
+
+naruto_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 14,
+  video_link: "https://www.youtube.com/embed/Amr07IIdre4"
+)
+
+naruto_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 14,
+  video_link: "https://www.youtube.com/embed/er9DB8kN4HE"
+)
+
+naruto_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 14,
+  video_link: "https://www.youtube.com/embed/SxruXNQoq9w"
+)
+
+naruto_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 14,
+  video_link: "https://www.youtube.com/embed/D0rD7926kWk"
+)
+
+naruto_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 14,
+  video_link: "https://www.youtube.com/embed/4D0ZPRZnBEY"
+)
+
+naruto_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 14,
+  video_link: "https://www.youtube.com/embed/LfZHVFR5i7k"
+)
+
+naruto_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 14,
+  video_link: "https://www.youtube.com/embed/I8OuDcffq6k"
+)
+
+naruto_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 14,
+  video_link: "https://www.youtube.com/embed/HukT_Wqwf_c"
+)
+
+naruto_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 14,
+  video_link: "https://www.youtube.com/embed/etbzFm7eJM8"
+)
+
+
+# fire force
+
+fire_force_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 15,
+  video_link: "https://www.youtube.com/embed/bS1panhn2CM"
+)
+
+fire_force_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 15,
+  video_link: "https://www.youtube.com/embed/zQ3iP4oAEyU"
+)
+
+fire_force_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 15,
+  video_link: "https://www.youtube.com/embed/BoKZpboZuYA"
+)
+
+fire_force_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 15,
+  video_link: "https://www.youtube.com/embed/eMew9QvGuWg"
+)
+
+fire_force_5 = Episode.create(
+  title: "Episode 5",
+  anime_id: 15,
+  video_link: "https://www.youtube.com/embed/-QOJ5U2fEuI"
+)
+
+fire_force_6 = Episode.create(
+  title: "Episode 6",
+  anime_id: 15,
+  video_link: "https://www.youtube.com/embed/6HyFX5QRsVg"
+)
+
+fire_force_7 = Episode.create(
+  title: "Episode 7",
+  anime_id: 15,
+  video_link: "https://www.youtube.com/embed/LStzSDhMmxU"
+)
+
+fire_force_8 = Episode.create(
+  title: "Episode 8",
+  anime_id: 15,
+  video_link: "https://www.youtube.com/embed/ZZanjiyznQw"
+)
+
+fire_force_9 = Episode.create(
+  title: "Episode 9",
+  anime_id: 15,
+  video_link: "https://www.youtube.com/embed/WrjAosd7t1U"
+)
+
+fire_force_10 = Episode.create(
+  title: "Episode 10",
+  anime_id: 15,
+  video_link: "https://www.youtube.com/embed/2RT1ow9dNhQ"
+)
+
+fire_force_11 = Episode.create(
+  title: "Episode 11",
+  anime_id: 15,
+  video_link: "https://www.youtube.com/embed/I2S2xEOqr20"
+)
+
+fire_force_12 = Episode.create(
+  title: "Episode 12",
+  anime_id: 15,
+  video_link: "https://www.youtube.com/embed/gbStjm5VoFo"
+)
+
+
+# fire force
+
+your_name_1 = Episode.create(
+  title: "Episode 1",
+  anime_id: 16,
+  video_link: "https://www.youtube.com/embed/aZiHVkZ9Yps"
+)
+
+your_name_2 = Episode.create(
+  title: "Episode 2",
+  anime_id: 16,
+  video_link: "https://www.youtube.com/embed/s0wTdCQoc2k"
+)
+
+your_name_3 = Episode.create(
+  title: "Episode 3",
+  anime_id: 16,
+  video_link: "https://www.youtube.com/embed/xHp9r13xaNE"
+)
+
+your_name_4 = Episode.create(
+  title: "Episode 4",
+  anime_id: 16,
+  video_link: "https://www.youtube.com/embed/a2GujJZfXpg"
+)
+
