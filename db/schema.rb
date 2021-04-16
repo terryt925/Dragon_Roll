@@ -10,10 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_06_170527) do
+ActiveRecord::Schema.define(version: 2021_04_15_051605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "animes", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "synopsis", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_animes_on_title", unique: true
+  end
+
+  create_table "episodes", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "anime_id", null: false
+    t.string "video_link", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["anime_id"], name: "index_episodes_on_anime_id"
+    t.index ["title"], name: "index_episodes_on_title"
+    t.index ["video_link"], name: "index_episodes_on_video_link", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
@@ -25,4 +65,5 @@ ActiveRecord::Schema.define(version: 2021_04_06_170527) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
 end
