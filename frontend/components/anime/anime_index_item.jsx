@@ -13,14 +13,13 @@ class AnimeIndexItem extends React.Component {
   render() {
 
     return (
+      
       <Link to={`/animes/${this.props.anime.id}`} style={{ textDecoration: 'none' }}>
-
         <ul className="thumbnail">
           <img src={this.props.anime.photo_url} className="image"/>
           <li className="image-text">{this.props.anime.title}</li>
         </ul>
-              </Link >
-
+      </Link >
     )
   }
 }

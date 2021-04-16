@@ -5,10 +5,10 @@ import GreetingContainer from './greeting/greeting_container';
 // import HomeContainer from './home/home_container';
 import { Route, Link, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
-import AnimeContainer from './anime/anime_index_container';
+import AnimeIndexContainer from './anime/anime_index_container';
 import Banner from './banner/banner_container'
-import EpisodeContainer from './anime/anime_show_container';
-// import EpisodeIndexItem from './anime/anime_show_item';
+import AnimeShowContainer from './anime/anime_show_container';
+import EpisodeShowContainer from './anime/episode_container';
 
 const NoMatchPage = () => {
   return (
@@ -28,9 +28,9 @@ export default () => (
     <Switch>
         <AuthRoute exact path="/signup" component={SignupContainer} />
         <AuthRoute exact path="/login" component={LoginContainer} />
-        <ProtectedRoute exact path="/" component={AnimeContainer}/>
-        <ProtectedRoute exact path="/animes/:id" component={EpisodeContainer} />
-      {/* <ProtectedRoute exact path="/animes/:id/episodes/:id" component={EpisodeIndexItem} /> */}
+        <ProtectedRoute exact path="/" component={AnimeIndexContainer}/>
+        <ProtectedRoute exact path="/animes/:id" component={AnimeShowContainer} />
+        <ProtectedRoute exact path="/episodes/:id" component={EpisodeShowContainer} />
         <Route component={NoMatchPage} />
     </Switch>
   </div>

@@ -14,7 +14,6 @@ const mDTP = (dipatch) => ({
   requestAnime: (animeId) => dipatch(requestAnime(animeId)),
   requestEpisode: (episodeId) => dipatch(requestEpisode(episodeId))
 
-
 })
 
 export default connect(mSTP, mDTP)(EpisodeIndex);

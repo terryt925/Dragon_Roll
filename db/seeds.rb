@@ -80,7 +80,7 @@ haikyu = Anime.create!(
 
 hxh = Anime.create!(
   title: 'Hunter x Hunter',
-  synopsis: 'Gon, a young boy who lives on Whale Island, dreams of becoming a Hunter like his father, who left when Gon was still young.'
+  synopsis: 'Gon Freecss is a young boy living on Whale Island. He learns from "Hunter" Kite, that his father, who he was told was dead, is still alive somewhere as a top "Hunter," risking his life to seek unknown items, such as hidden treasures, curiosa, exotic living creatures, etc. Gon decides to become a professional Hunter and leaves the island. To become a Hunter, he must pass the Hunter Examination, where he meets and befriends three other applicants: Kurapika, Leorio and Killua. Can Gon pass this formidable hurdle, the Hunter Examination, to become "the Best Hunter in the World" and eventually meet his father?'
 )
 
 jojo = Anime.create!(
@@ -90,7 +90,7 @@ jojo = Anime.create!(
 
 naruto = Anime.create!(
   title: "Naruto",
-  synopsis: "The Village Hidden in the Leaves is home to the stealthiest ninja. But twelve years earlier, a fearsome Nine-tailed Fox terrorized the village before it was subdued and its spirit sealed within the body of a baby boy."
+  synopsis: "Twelve years before the start of the series, the Nine-Tails attacked Konohagakure destroying much of the village and taking many lives. The leader of the village, the Fourth Hokage, sacrificed his life to seal the Nine-Tails into a newborn, Naruto Uzumaki. Orphaned by the attack, Naruto was shunned by the villagers, who out of fear and anger, viewed him as the Nine-Tails itself. Though the Third Hokage outlawed speaking about anything related to the Nine-Tails, the children — taking their cues from their parents — inherited the same animosity towards Naruto. In his thirst to be acknowledged, Naruto vowed he would one day become the greatest Hokage the village had ever seen."
 )
 
 fire_force = Anime.create!(
@@ -1294,25 +1294,25 @@ fire_force_12 = Episode.create(
 # fire force
 
 your_name_1 = Episode.create(
-  title: "Episode 1",
+  title: "Full Movie",
   anime_id: 16,
   video_link: "https://www.youtube.com/embed/aZiHVkZ9Yps"
 )
 
 your_name_2 = Episode.create(
-  title: "Episode 2",
+  title: "Trailer",
   anime_id: 16,
   video_link: "https://www.youtube.com/embed/s0wTdCQoc2k"
 )
 
 your_name_3 = Episode.create(
-  title: "Episode 3",
+  title: "Best Moments",
   anime_id: 16,
   video_link: "https://www.youtube.com/embed/xHp9r13xaNE"
 )
 
 your_name_4 = Episode.create(
-  title: "Episode 4",
+  title: "OST",
   anime_id: 16,
   video_link: "https://www.youtube.com/embed/a2GujJZfXpg"
 )
