@@ -54,8 +54,11 @@
   width: 198px;
 }
 
+// body { background-image: url(<%= asset_path 'background1.jpg' %>) }
+
 body {
-  background-image: url('background1.jpg');
+  // background-image: url('background1.jpg');
+  background-image: url('https://dragon-roll-aa-pro.s3-us-west-1.amazonaws.com/background1.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
