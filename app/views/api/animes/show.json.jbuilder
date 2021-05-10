@@ -10,7 +10,6 @@
 # end
 
 
-
 json.episodes do
     @anime.episodes.each do |episode|
         json.set! episode.id do
