@@ -13,12 +13,14 @@ class AnimeIndex extends React.Component {
       <div >
         <p className="anime-heading" >Anime</p>
         <p className="line" ></p>
-        <div className="thumbnails" >
-          {
-            this.props.animes.map((anime, id) => (
-                <AnimeIndexItem key={id} anime={anime}  />
-            ))
-          }
+        <div className='center-thumbnails'>
+          <div className="thumbnails" >
+            {
+              this.props.animes.map((anime, id) => (
+                  <AnimeIndexItem key={id} anime={anime}  />
+              ))
+            }
+          </div>
         </div>
       </div>
     )

@@ -335,13 +335,15 @@ var AnimeIndex = /*#__PURE__*/function (_React$Component) {
       }, "Anime"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "line"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "center-thumbnails"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "thumbnails"
       }, this.props.animes.map(function (anime, id) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_anime_index_item__WEBPACK_IMPORTED_MODULE_1__.default, {
           key: id,
           anime: anime
         });
-      })));
+      }))));
     }
   }]);
 
