@@ -16,19 +16,19 @@ class EpisodeIndex extends React.Component {
     // debugger
     if (!this.props.episodes) return null;
     return (
-      <div>
-        <div className="episode-list-container">
-          <p className="episode-list-name">Spring 2021</p>
-          <p className="episode-line"></p>
-        </div>
+      <div className='center-episode-list'>
         <div className="anime-show-container">
-          <div className="anime-episode-list">
+          <div className="episode-list-container">
+            <p className="episode-list-name">Spring 2021</p>
+            <p className="episode-line"></p>
+          </div>
+          <p className="anime-episode-list">
             {
               this.props.episodes.map((episode, id) => (
                   <EpisodeIndexItem key={id} episode={episode} />
               ))
             }
-          </div>
+          </p>
           <div className="anime-show-description">
             <img src={this.props.anime.photo_url} className="anime-show-image" />
             <p className="anime-title">{this.props.anime.title}</p>

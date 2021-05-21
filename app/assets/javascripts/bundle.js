@@ -446,6 +446,14 @@ var AnimeIndexItem = /*#__PURE__*/function (_React$Component) {
     //   this.props.submitEvent(this.state)
     // }
     function render() {
+      var amount;
+
+      if (this.props.anime.id !== 16) {
+        amount = '12 Videos';
+      } else {
+        amount = '4 Videos';
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
         to: "/animes/".concat(this.props.anime.id),
         style: {
@@ -458,7 +466,9 @@ var AnimeIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "image"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
         className: "image-text"
-      }, this.props.anime.title)));
+      }, this.props.anime.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+        className: "anime-video-amount"
+      }, amount)));
     }
   }]);
 
@@ -530,15 +540,17 @@ var EpisodeIndex = /*#__PURE__*/function (_React$Component) {
       console.log("test", this.props); // debugger
 
       if (!this.props.episodes) return null;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "center-episode-list"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "anime-show-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "episode-list-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "episode-list-name"
       }, "Spring 2021"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "episode-line"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "anime-show-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "anime-episode-list"
       }, this.props.episodes.map(function (episode, id) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_anime_show_item__WEBPACK_IMPORTED_MODULE_1__.default, {

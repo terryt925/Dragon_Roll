@@ -6,7 +6,7 @@
 .thumbnail {
   color: black;
   cursor: pointer;
-  margin: 18px;
+  // margin: 18px;
   text-decoration: none;
   // display: flex;
   justify-content: center;
@@ -17,20 +17,26 @@
   border-width: 0.5px;
   background-color: #eee;
   // opacity: 1;
-  text-align: center;
+  // text-align: center;
+  padding-bottom: 15px;
 }
 
 .thumbnail:hover {
   background-color: white;
   box-shadow: 0 1px 1px black;
   transform: scale(1.03);
+  color: #0a6da4;
+}
+
+.thumbnail li {
+  margin-left: 8%;
 }
 
 .thumbnails {
   // display: flex;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  // grid-gap: 15px;
+  grid-gap: 33px;
   // justify-content: center;
   // align-items: center;
   margin-right: 20%;
@@ -41,6 +47,7 @@
   text-decoration: none;
   // padding-left: 20%;
   // padding-right: 20%;
+  padding: 20px;
 
 }
 
@@ -48,6 +55,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 100px;
+}
+
+p a {
+  height: 205px;
+}
+
+div a {
+  // width: ;
 }
 
 .image {
@@ -59,11 +75,20 @@
 .image-text {
   margin-top: 10px;
   margin-bottom: 15px;
-  font-weight: bold;
-  font-family: "Helvetica Neue",Arial,sans-serif;
+  font-weight: 700;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   margin-left: 5px;
   margin-right: 5px;
   width: 198px;
+}
+
+.anime-video-amount {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: grey;
+}
+
+.anime-video-amount:hover {
+  color: grey;
 }
 
 // body { background-image: url(<%= asset_path 'background1.jpg' %>) }
@@ -126,8 +151,8 @@ body {
 
 .episode-list-container {
   position: absolute;
-  left: 235px;
-  top: 430px;
+  left: 10px;
+  top: 20px;
 }
 
 .episode-list-name {
@@ -135,6 +160,13 @@ body {
   font-weight: bold;
   font-family: "Helvetica Neue",Arial,sans-serif;
   margin-left: 40px;
+}
+
+.center-episode-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // position: relative;
 }
 
 .episode-line {
@@ -146,22 +178,26 @@ body {
 
 .anime-show-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  // align-items: center;
   margin-right: 12%;
   margin-left: 12%;
   margin-top: 30px;
   background-color: rgba(242,242,242, 0.9);
   margin-bottom: 120px;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
+  position: relative;
 }
 
 
 .anime-episode-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  // flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr);
   text-decoration: none;
   margin-top: 105px;
-  margin-left: 20px;
+  margin-right: 20px;
+  margin-left: 10px;
 }
 
 .episode-item {
