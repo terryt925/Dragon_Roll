@@ -6,6 +6,14 @@ class User < ApplicationRecord
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  has_many :bookmarks,
+    foreign_key: :user_id,
+    class_name: :Bookmark
+
+  has_many :bookmarked_episodes,
+    through: :bookmarks,
+    source: :episode
+
   after_initialize :ensure_session_token
 
 
