@@ -15,9 +15,10 @@ class EpisodeIndexItem extends React.Component {
       style={{ textDecoration: 'none' }}>
         <div className="episode-item" >
             <div className="video-margin"></div>
-            <iframe width="180" height="135"
+            {/* <iframe width="180" height="135"
               src={this.props.episode.video_link}>
-            </iframe>
+            </iframe> */}
+            <img src={"/playbutton.png"} width='180' height='135' />
             <p className="episode-item-text">{this.props.episode.title}</p>
         </div>
       </Link> 

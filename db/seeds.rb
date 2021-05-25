@@ -84,7 +84,7 @@ hxh = Anime.create!(
 )
 
 jojo = Anime.create!(
-  title: "JoJo's Bizarre Adventure: Golden Wind",
+  title: "JoJo's Bizarre Adventure",
   synopsis: 'Part 1 - Phantom Blood In ancient Mexico, people of Aztec had prospered. They had historic and strange "Stone Mask". It was a miraculous mask which brings eternal life and the power of authentic ruler. But the mask suddenly disappeared. A long time after that, in late 19th centuries when the thought and life of people were suddenly changing, Jonathan Joestar met with Dio Brando―. They spend time together through boyhood to youth, and the "Stone Mask" brings curious fate to them―.'
 )
 

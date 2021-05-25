@@ -446,6 +446,14 @@ var AnimeIndexItem = /*#__PURE__*/function (_React$Component) {
     //   this.props.submitEvent(this.state)
     // }
     function render() {
+      var amount;
+
+      if (this.props.anime.id !== 16) {
+        amount = '12 Videos';
+      } else {
+        amount = '4 Videos';
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
         to: "/animes/".concat(this.props.anime.id),
         style: {
@@ -458,7 +466,9 @@ var AnimeIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "image"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
         className: "image-text"
-      }, this.props.anime.title)));
+      }, this.props.anime.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+        className: "anime-video-amount"
+      }, amount)));
     }
   }]);
 
@@ -527,18 +537,20 @@ var EpisodeIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log("test", this.props); // debugger
-
+      // console.log("test",this.props)
+      // debugger
       if (!this.props.episodes) return null;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "center-episode-list"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "anime-show-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "episode-list-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "episode-list-name"
       }, "Spring 2021"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "episode-line"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "anime-show-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "anime-episode-list"
       }, this.props.episodes.map(function (episode, id) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_anime_show_item__WEBPACK_IMPORTED_MODULE_1__.default, {
@@ -673,10 +685,10 @@ var EpisodeIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "episode-item"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "video-margin"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("iframe", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        src: "/playbutton.png",
         width: "180",
-        height: "135",
-        src: this.props.episode.video_link
+        height: "135"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "episode-item-text"
       }, this.props.episode.title)));
@@ -889,33 +901,84 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
-var Banner = function Banner(_ref) {
-  var currentUser = _ref.currentUser;
 
-  var noBanner = function noBanner() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null);
-  };
+var Banner = /*#__PURE__*/function (_React$Component) {
+  _inherits(Banner, _React$Component);
 
-  var personalBanner = function personalBanner() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "anime-div"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
-      to: "/animes/16",
-      style: {
-        textDecoration: 'none'
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      className: "header-image",
-      src: "/header.jpg",
-      alt: "Your Name"
-    })));
-  };
+  var _super = _createSuper(Banner);
 
-  return currentUser ? personalBanner() : noBanner();
-};
+  function Banner(props) {
+    var _this;
+
+    _classCallCheck(this, Banner);
+
+    _this = _super.call(this, props); // this.props.requestAnime = this.props.requestAnime.bind(this);
+
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Banner, [{
+    key: "handleClick",
+    value: function handleClick() {
+      this.props.requestAnime('16');
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      // const Banner = ({ currentUser}) => {
+      var noBanner = function noBanner() {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null);
+      };
+
+      var personalBanner = function personalBanner() {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "anime-div"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+          to: "/animes/16",
+          style: {
+            textDecoration: 'none'
+          }
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          className: "header-image",
+          src: "/header.jpg",
+          alt: "Your Name",
+          onClick: _this2.handleClick
+        })));
+      };
+
+      return this.props.currentUser ? personalBanner() : noBanner(); // };
+    }
+  }]);
+
+  return Banner;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Banner);
 
@@ -934,6 +997,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _banner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./banner */ "./frontend/components/banner/banner.jsx");
+/* harmony import */ var _actions_anime_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/anime_actions */ "./frontend/actions/anime_actions.js");
+
 
 
 
@@ -946,7 +1011,11 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    requestAnime: function requestAnime(animeId) {
+      return dispatch((0,_actions_anime_actions__WEBPACK_IMPORTED_MODULE_2__.requestAnime)(animeId));
+    }
+  };
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mapStateToProps, mapDispatchToProps)(_banner__WEBPACK_IMPORTED_MODULE_1__.default));

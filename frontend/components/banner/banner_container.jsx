@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import Banner from './banner';
+import { requestAnime } from '../../actions/anime_actions'
+
 
 const mapStateToProps = ({ session, entities: { users } }) => {
   return {
@@ -8,6 +10,7 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  requestAnime: (animeId) => dispatch(requestAnime(animeId))
 });
 
 export default connect(
