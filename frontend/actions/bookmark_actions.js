@@ -21,7 +21,7 @@ const removeBookmark = bookmarkId => ({
 
 export const requestBookmarks = () => dispatch => (
   APIUtil.fetchBookmarks()
-    .then(bookmarks => dispatch(receiveBookmarks(bookmarks)))
+    .then(bookmarks => dispatch(receiveAllBookmarks(bookmarks)))
 )
 
 export const requestBookmark = (bookmarkId) => dispatch => (

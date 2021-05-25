@@ -9,6 +9,7 @@ import AnimeIndexContainer from './anime/anime_index_container';
 import Banner from './banner/banner_container'
 import AnimeShowContainer from './anime/anime_show_container';
 import EpisodeShowContainer from './anime/episode_container';
+import BookmarkContainer from './bookmark/bookmark_container';
 
 const NoMatchPage = () => {
   return (
@@ -31,6 +32,7 @@ export default () => (
         <ProtectedRoute exact path="/" component={AnimeIndexContainer}/>
         <ProtectedRoute exact path="/animes/:id" component={AnimeShowContainer} />
         <ProtectedRoute exact path="/episodes/:id" component={EpisodeShowContainer} />
+        <ProtectedRoute exact path="/bookmarks" component={BookmarkContainer} />
         <Route component={NoMatchPage} />
     </Switch>
   </div>
