@@ -3,9 +3,9 @@ class Bookmark < ApplicationRecord
   validates :user_id, presence: true
   validates :episode_id, presence: true
 
-  belongs_to :episode,
-    foreign_key: :episode_id,
-    class_name: :Episode
+  belongs_to :anime,
+    foreign_key: :anime_id,
+    class_name: :Anime
 
   belongs_to :user,
     foreign_key: :user_id,
