@@ -4,7 +4,8 @@ import AnimeIndexItem from './anime_index_item';
 
 class AnimeIndex extends React.Component {
   componentDidMount() {
-    this.props.requestAnimes()
+    this.props.requestAnimes();
+    this.props.requestBookmarks();
   }
 
   render() {

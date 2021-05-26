@@ -409,6 +409,7 @@ var AnimeIndex = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.requestAnimes();
+      this.props.requestBookmarks();
     }
   }, {
     key: "render",
@@ -451,6 +452,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_anime_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/anime_actions */ "./frontend/actions/anime_actions.js");
 /* harmony import */ var _anime_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./anime_index */ "./frontend/components/anime/anime_index.jsx");
+/* harmony import */ var _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/bookmark_actions */ "./frontend/actions/bookmark_actions.js");
+
 
 
 
@@ -461,10 +464,13 @@ var mSTP = function mSTP(state) {
   };
 };
 
-var mDTP = function mDTP(dipatch) {
+var mDTP = function mDTP(dispatch) {
   return {
     requestAnimes: function requestAnimes() {
-      return dipatch((0,_actions_anime_actions__WEBPACK_IMPORTED_MODULE_1__.requestAnimes)());
+      return dispatch((0,_actions_anime_actions__WEBPACK_IMPORTED_MODULE_1__.requestAnimes)());
+    },
+    requestBookmarks: function requestBookmarks() {
+      return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_3__.requestBookmarks)());
     }
   };
 };
@@ -605,23 +611,59 @@ var EpisodeIndex = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(EpisodeIndex);
 
-  function EpisodeIndex() {
+  function EpisodeIndex(props) {
+    var _this;
+
     _classCallCheck(this, EpisodeIndex);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.createClick = _this.createClick.bind(_assertThisInitialized(_this));
+    _this.deleteClick = _this.deleteClick.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(EpisodeIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.requestAnime(this.props.match.params.id);
+      // this.props.requestBookmarks();
+      this.props.requestAnime(this.props.match.params.id); // this.props.requestAnime(this.props.anime.id);
+
       window.scrollTo(0, 0);
+    }
+  }, {
+    key: "createClick",
+    value: function createClick() {
+      this.props.createBookmark(this.props.bookmark); // .then(this.props.requestAnime(this.props.match.params.id))
+    }
+  }, {
+    key: "deleteClick",
+    value: function deleteClick() {
+      this.props.deleteBookmark(this.props.bookmark.anime_id); // .then(this.props.requestAnime(this.props.match.params.id))
     }
   }, {
     key: "render",
     value: function render() {
-      // console.log("test",this.props)
+      var _this2 = this;
+
       // debugger
+      console.log(this.props);
+      var bookmark = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        onClick: this.createClick,
+        className: "not-bookmarked"
+      }, "Bookmark");
+      this.props.userBookmarks.map(function (anime) {
+        if (anime.id === _this2.props.bookmark.anime_id) {
+          return bookmark = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+            onClick: _this2.deleteClick,
+            className: "bookmarked"
+          }, "Bookmarked");
+        } // else {
+        // bookmark = <button onClick={this.handleClick} className='not-bookmarked'>
+        //             Bookmark
+        //           </button>;
+        // }
+
+      });
       if (!this.props.episodes) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "center-episode-list"
@@ -647,7 +689,7 @@ var EpisodeIndex = /*#__PURE__*/function (_React$Component) {
         className: "anime-show-image"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "anime-title"
-      }, this.props.anime.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+      }, this.props.anime.title, bookmark), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "anime-show-line"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "anime-show-text"
@@ -675,32 +717,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_anime_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/anime_actions */ "./frontend/actions/anime_actions.js");
-/* harmony import */ var _anime_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./anime_show */ "./frontend/components/anime/anime_show.jsx");
-/* harmony import */ var _actions_episode_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/episode_actions */ "./frontend/actions/episode_actions.js");
+/* harmony import */ var _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/bookmark_actions */ "./frontend/actions/bookmark_actions.js");
+/* harmony import */ var _anime_show__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./anime_show */ "./frontend/components/anime/anime_show.jsx");
+/* harmony import */ var _actions_episode_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/episode_actions */ "./frontend/actions/episode_actions.js");
 
 
 
 
+
+ // import { requestBookmarks} from '../../actions/bookmark_actions';
 
 var mSTP = function mSTP(state) {
   return {
     anime: state.entities.animes,
-    episodes: Object.values(state.entities.episodes)
+    episodes: Object.values(state.entities.episodes),
+    // userId: state.entities.users[1].id,
+    bookmark: {
+      user_id: state.entities.users[1].id,
+      anime_id: state.entities.animes.id
+    },
+    userBookmarks: Object.values(state.entities.bookmarks)
   };
 };
 
-var mDTP = function mDTP(dipatch) {
+var mDTP = function mDTP(dispatch) {
   return {
     requestAnime: function requestAnime(animeId) {
-      return dipatch((0,_actions_anime_actions__WEBPACK_IMPORTED_MODULE_1__.requestAnime)(animeId));
+      return dispatch((0,_actions_anime_actions__WEBPACK_IMPORTED_MODULE_1__.requestAnime)(animeId));
     },
     requestEpisode: function requestEpisode(episodeId) {
-      return dipatch((0,_actions_episode_actions__WEBPACK_IMPORTED_MODULE_3__.requestEpisode)(episodeId));
-    }
+      return dispatch((0,_actions_episode_actions__WEBPACK_IMPORTED_MODULE_4__.requestEpisode)(episodeId));
+    },
+    createBookmark: function createBookmark(bookmark) {
+      return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_2__.createBookmark)(bookmark));
+    },
+    deleteBookmark: function deleteBookmark(bookmarkId) {
+      return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_2__.deleteBookmark)(bookmarkId));
+    } // requestBookmarks: () => dispatch(requestBookmarks())
+
   };
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP, mDTP)(_anime_show__WEBPACK_IMPORTED_MODULE_2__.default));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP, mDTP)(_anime_show__WEBPACK_IMPORTED_MODULE_3__.default));
 
 /***/ }),
 
@@ -809,10 +867,10 @@ var mSTP = function mSTP(state, ownProps) {
   };
 };
 
-var mDTP = function mDTP(dipatch) {
+var mDTP = function mDTP(dispatch) {
   return {
     requestEpisode: function requestEpisode(episodeId) {
-      return dipatch((0,_actions_episode_actions__WEBPACK_IMPORTED_MODULE_2__.requestEpisode)(episodeId));
+      return dispatch((0,_actions_episode_actions__WEBPACK_IMPORTED_MODULE_2__.requestEpisode)(episodeId));
     }
   };
 };
@@ -38738,6 +38796,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+ // import {createBookmark} from './actions/bookmark_actions';
 
 document.addEventListener('DOMContentLoaded', function () {
   var store;
@@ -38757,7 +38816,9 @@ document.addEventListener('DOMContentLoaded', function () {
     store = (0,_store_store__WEBPACK_IMPORTED_MODULE_2__.default)();
   }
 
-  window.getState = store.getState;
+  window.getState = store.getState; // window.dispatch = store.dispatch;
+  // window.createBookmark = createBookmark;
+
   var root = document.getElementById('root');
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__.default, {
     store: store

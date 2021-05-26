@@ -8,8 +8,8 @@ const mSTP = (state, ownProps) => ({
 })
 
 
-const mDTP = (dipatch) => ({
-  requestEpisode: (episodeId) => dipatch(requestEpisode(episodeId))
+const mDTP = (dispatch) => ({
+  requestEpisode: (episodeId) => dispatch(requestEpisode(episodeId))
 })
 
 export default connect(mSTP, mDTP)(EpisodeShow);

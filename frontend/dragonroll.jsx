@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
+// import {createBookmark} from './actions/bookmark_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.createBookmark = createBookmark;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });
