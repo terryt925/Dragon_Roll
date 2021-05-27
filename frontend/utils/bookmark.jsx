@@ -28,9 +28,9 @@ export const updateBookmark = (bookmark) => (
   })
 )
 
-export const deleteBookmark = (bookmarkId) => (
+export const deleteBookmark = (id) => (
   $.ajax({
     method: "DELETE",
-    url: `/api/bookmarks/${bookmarkId}`
+    url: `/api/bookmarks/${id}`
   })
 )

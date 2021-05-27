@@ -228,8 +228,8 @@ var updateBookmark = function updateBookmark(bookmark) {
 };
 var deleteBookmark = function deleteBookmark(bookmarkId) {
   return function (dispatch) {
-    return _utils_bookmark__WEBPACK_IMPORTED_MODULE_0__.deleteBookmark(bookmarkId).then(function () {
-      return dispatch(removeBookmark(bookmarkId));
+    return _utils_bookmark__WEBPACK_IMPORTED_MODULE_0__.deleteBookmark(bookmarkId).then(function (res) {
+      return dispatch(removeBookmark(res));
     });
   };
 };
@@ -625,10 +625,10 @@ var EpisodeIndex = /*#__PURE__*/function (_React$Component) {
   _createClass(EpisodeIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // this.props.requestBookmarks();
       this.props.requestAnime(this.props.match.params.id); // this.props.requestAnime(this.props.anime.id);
+      // window.scrollTo(0, 0);
 
-      window.scrollTo(0, 0);
+      this.props.requestBookmarks();
     }
   }, {
     key: "createClick",
@@ -641,6 +641,7 @@ var EpisodeIndex = /*#__PURE__*/function (_React$Component) {
     value: function deleteClick(e) {
       e.preventDefault();
       this.props.deleteBookmark(this.props.bookmark.anime_id); // .then(this.props.requestAnime(this.props.match.params.id))
+      // .then(this.props.requestBookmarks())
     }
   }, {
     key: "render",
@@ -648,7 +649,8 @@ var EpisodeIndex = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       // debugger
-      console.log(this.props);
+      // console.log(this.props)
+      // console.log(this.props.bookmark.anime_id)
       var bookmark = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
         onClick: this.createClick,
         className: "not-bookmarked"
@@ -665,8 +667,8 @@ var EpisodeIndex = /*#__PURE__*/function (_React$Component) {
         //           </button>;
         // }
 
-      });
-      if (!this.props.episodes) return null;
+      }); // if (!this.props.episodes) return null;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "center-episode-list"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -727,7 +729,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import { requestBookmarks} from '../../actions/bookmark_actions';
+
+
 
 var mSTP = function mSTP(state) {
   return {
@@ -755,8 +758,10 @@ var mDTP = function mDTP(dispatch) {
     },
     deleteBookmark: function deleteBookmark(bookmarkId) {
       return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_2__.deleteBookmark)(bookmarkId));
-    } // requestBookmarks: () => dispatch(requestBookmarks())
-
+    },
+    requestBookmarks: function requestBookmarks() {
+      return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_2__.requestBookmarks)());
+    }
   };
 };
 
@@ -1878,8 +1883,10 @@ var bookmarkReducer = function bookmarkReducer() {
       return Object.assign({}, state, action.bookmark);
 
     case _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_0__.REMOVE_BOOKMARK:
-      delete nextState[action.bookmarkId];
-      return nextState;
+      // delete nextState[action.bookmarkId];
+      // delete nextState[action.bookmarkId];
+      // console.log(action.bookmarkId);
+      return action.bookmarkId;
 
     default:
       return state;
@@ -1952,7 +1959,7 @@ var episodeReducer = function episodeReducer() {
       return nextState;
 
     default:
-      return {};
+      return state;
   }
 };
 
@@ -2222,10 +2229,10 @@ var updateBookmark = function updateBookmark(bookmark) {
     }
   });
 };
-var deleteBookmark = function deleteBookmark(bookmarkId) {
+var deleteBookmark = function deleteBookmark(id) {
   return $.ajax({
     method: "DELETE",
-    url: "/api/bookmarks/".concat(bookmarkId)
+    url: "/api/bookmarks/".concat(id)
   });
 };
 
@@ -38798,12 +38805,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
+/* harmony import */ var _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/bookmark_actions */ "./frontend/actions/bookmark_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
+
  // import {createBookmark} from './actions/bookmark_actions';
+
 
 document.addEventListener('DOMContentLoaded', function () {
   var store;
@@ -38823,9 +38833,11 @@ document.addEventListener('DOMContentLoaded', function () {
     store = (0,_store_store__WEBPACK_IMPORTED_MODULE_2__.default)();
   }
 
-  window.getState = store.getState; // window.dispatch = store.dispatch;
-  // window.createBookmark = createBookmark;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch; // window.createBookmark = createBookmark;
 
+  window.deleteBookmark = _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_4__.deleteBookmark;
+  window.requestBookmarks = _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_4__.requestBookmarks;
   var root = document.getElementById('root');
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__.default, {
     store: store

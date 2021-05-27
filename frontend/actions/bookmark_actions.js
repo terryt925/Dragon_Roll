@@ -41,5 +41,5 @@ export const updateBookmark = (bookmark) => dispatch => (
 
 export const deleteBookmark = (bookmarkId) => dispatch => (
   APIUtil.deleteBookmark(bookmarkId)
-    .then(() => dispatch(removeBookmark(bookmarkId)))
+    .then((res) => dispatch(removeBookmark(res)))
 )

@@ -4,7 +4,7 @@ import { createBookmark } from '../../actions/bookmark_actions';
 import EpisodeIndex from './anime_show';
 import { requestEpisode } from '../../actions/episode_actions';
 import { deleteBookmark } from '../../actions/bookmark_actions';
-// import { requestBookmarks} from '../../actions/bookmark_actions';
+import { requestBookmarks} from '../../actions/bookmark_actions';
 
 
 const mSTP = (state) => ({
@@ -24,7 +24,7 @@ const mDTP = (dispatch) => ({
   requestEpisode: (episodeId) => dispatch(requestEpisode(episodeId)),
   createBookmark: (bookmark) => dispatch(createBookmark(bookmark)),
   deleteBookmark: (bookmarkId) => dispatch(deleteBookmark(bookmarkId)),
-  // requestBookmarks: () => dispatch(requestBookmarks())
+  requestBookmarks: () => dispatch(requestBookmarks()),
 
 })
 

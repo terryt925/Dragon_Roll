@@ -28,7 +28,7 @@ class Api::BookmarksController < ApplicationController
   # end
 
   def update
-    @bookmark = Bookmark.find_by(id: params[:id])
+    @bookmark = Bookmark.find_by(anime_id: params[:anime_id], user_id: :current_user)
     if @bookmark.update(bookmark_params)
       render :index
     else
@@ -46,7 +46,8 @@ class Api::BookmarksController < ApplicationController
   # end
 
   def destroy
-    @bookmark = Bookmark.find(params[:id])
+    # @bookmark = Bookmark.find_by(id: params[:id])
+    @bookmark =  current_user.bookmarks.where(anime_id: params[:id])[0]
     @bookmark.destroy
     
     render :index

@@ -12,10 +12,10 @@ class EpisodeIndex extends React.Component {
 
 
   componentDidMount() {
-    // this.props.requestBookmarks();
     this.props.requestAnime(this.props.match.params.id);
     // this.props.requestAnime(this.props.anime.id);
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
+    this.props.requestBookmarks();
 
   }
 
@@ -29,11 +29,13 @@ class EpisodeIndex extends React.Component {
     e.preventDefault();
     this.props.deleteBookmark(this.props.bookmark.anime_id)
       // .then(this.props.requestAnime(this.props.match.params.id))
+      // .then(this.props.requestBookmarks())
   }
 
   render() {
     // debugger
-    console.log(this.props)
+    // console.log(this.props)
+    // console.log(this.props.bookmark.anime_id)
     let bookmark = <button onClick={this.createClick} className='not-bookmarked'>
                     Bookmark
                   </button>;
@@ -49,7 +51,7 @@ class EpisodeIndex extends React.Component {
         //           </button>;
       // }
     })
-    if (!this.props.episodes) return null;
+    // if (!this.props.episodes) return null;
     return (
       <div className='center-episode-list'>
         <div className="anime-show-container">
