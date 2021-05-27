@@ -19,12 +19,14 @@ class EpisodeIndex extends React.Component {
 
   }
 
-  createClick() {
+  createClick(e) {
+    e.preventDefault();
     this.props.createBookmark(this.props.bookmark)
       // .then(this.props.requestAnime(this.props.match.params.id))
   }
 
-  deleteClick() {
+  deleteClick(e) {
+    e.preventDefault();
     this.props.deleteBookmark(this.props.bookmark.anime_id)
       // .then(this.props.requestAnime(this.props.match.params.id))
   }

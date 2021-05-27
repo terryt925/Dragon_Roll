@@ -632,12 +632,14 @@ var EpisodeIndex = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "createClick",
-    value: function createClick() {
+    value: function createClick(e) {
+      e.preventDefault();
       this.props.createBookmark(this.props.bookmark); // .then(this.props.requestAnime(this.props.match.params.id))
     }
   }, {
     key: "deleteClick",
-    value: function deleteClick() {
+    value: function deleteClick(e) {
+      e.preventDefault();
       this.props.deleteBookmark(this.props.bookmark.anime_id); // .then(this.props.requestAnime(this.props.match.params.id))
     }
   }, {
@@ -1226,6 +1228,7 @@ var Bookmark = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      if (!this.props.bookmarks) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Queued Anime"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, this.props.bookmarks.map(function (anime, id) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_bookmark_item__WEBPACK_IMPORTED_MODULE_1__.default, {
           key: id,
@@ -1336,8 +1339,12 @@ var BookmarkItem = /*#__PURE__*/function (_React$Component) {
   _createClass(BookmarkItem, [{
     key: "render",
     value: function render() {
-      /*#__PURE__*/
-      react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+        to: "/animes/".concat(this.props.anime.id),
+        style: {
+          textDecoration: 'none'
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
         src: this.props.anime.photo_url
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, this.props.anime.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, this.props.anime.synopsis)));
     }

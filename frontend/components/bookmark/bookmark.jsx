@@ -7,7 +7,7 @@ class Bookmark extends React.Component {
   }
 
   render() {
-
+    if (!this.props.bookmarks) return null;
     return(
       <div>
         <p>Queued Anime</p>
