@@ -13,6 +13,9 @@ const Greeting = ({ currentUser, logout }) => {
       <NavLink activeClassName="selected"  exact to="/" >
         <input id="anime" className="navi-button" readOnly value="Anime"/>
       </NavLink>
+      <NavLink activeClassName="selected"  exact to="/bookmarks" >
+        <input id="bookmark" className="navi-button" readOnly value="Queue"/>
+      </NavLink>
       <input id="nav" className="button" onClick={logout} readOnly value="Log Out"/>
     </hgroup>
   );

@@ -667,8 +667,8 @@ var EpisodeIndex = /*#__PURE__*/function (_React$Component) {
         //           </button>;
         // }
 
-      }); // if (!this.props.episodes) return null;
-
+      });
+      if (this.props.episodes.length < 1) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "center-episode-list"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -1396,6 +1396,15 @@ var Greeting = function Greeting(_ref) {
       className: "navi-button",
       readOnly: true,
       value: "Anime"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.NavLink, {
+      activeClassName: "selected",
+      exact: true,
+      to: "/bookmarks"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      id: "bookmark",
+      className: "navi-button",
+      readOnly: true,
+      value: "Queue"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
       id: "nav",
       className: "button",
@@ -38805,15 +38814,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
-/* harmony import */ var _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/bookmark_actions */ "./frontend/actions/bookmark_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
-
- // import {createBookmark} from './actions/bookmark_actions';
-
+ // import { deleteBookmark } from './actions/bookmark_actions';
+// import {createBookmark} from './actions/bookmark_actions';
+// import { requestBookmarks } from './actions/bookmark_actions';
 
 document.addEventListener('DOMContentLoaded', function () {
   var store;
@@ -38835,9 +38843,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch; // window.createBookmark = createBookmark;
+  // window.deleteBookmark = deleteBookmark;
+  // window.requestBookmarks = requestBookmarks;
 
-  window.deleteBookmark = _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_4__.deleteBookmark;
-  window.requestBookmarks = _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_4__.requestBookmarks;
   var root = document.getElementById('root');
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__.default, {
     store: store

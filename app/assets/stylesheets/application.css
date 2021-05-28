@@ -62,13 +62,20 @@ header {
 
 
 
-#anime {
+#bookmark {
   position: absolute; 
   top: 4.5px; 
   right: 125px; 
   width: 100px; 
   line-height: 2.7;
+}
 
+#anime {
+  position: absolute;
+  top: 4.5px;
+  right: 245px;
+  width: 100px;
+  line-height: 2.7;
 }
 
 .button {

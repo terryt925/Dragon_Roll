@@ -51,7 +51,7 @@ class EpisodeIndex extends React.Component {
         //           </button>;
       // }
     })
-    // if (!this.props.episodes) return null;
+    if (this.props.episodes.length < 1) return null;
     return (
       <div className='center-episode-list'>
         <div className="anime-show-container">
