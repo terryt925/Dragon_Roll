@@ -5,12 +5,13 @@ class EpisodeShow extends React.Component {
 
   componentDidMount() {
     this.props.requestEpisode(this.props.match.params.id)
+      // .then((res) => console.log(res))
     // window.scrollTo(3, 3);
   }
 
 
   render() {
-    console.log(this.props)
+    if (this.props.episode === undefined) return null;
     return (
       <div className="episode-show-item-container">
         <h1 className="episode-show-item-title">{this.props.episode.title}</h1>

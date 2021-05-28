@@ -552,6 +552,7 @@ var AnimeIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "thumbnail"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
         src: this.props.anime.photo_url,
+        title: this.props.anime.synopsis,
         className: "image"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
         className: "image-text"
@@ -936,12 +937,13 @@ var EpisodeShow = /*#__PURE__*/function (_React$Component) {
   _createClass(EpisodeShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.requestEpisode(this.props.match.params.id); // window.scrollTo(3, 3);
+      this.props.requestEpisode(this.props.match.params.id); // .then((res) => console.log(res))
+      // window.scrollTo(3, 3);
     }
   }, {
     key: "render",
     value: function render() {
-      console.log(this.props);
+      if (this.props.episode === undefined) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "episode-show-item-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
@@ -1114,7 +1116,7 @@ var Banner = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           className: "header-image",
           src: "/header.jpg",
-          alt: "Your Name",
+          title: "Your Name",
           onClick: _this2.handleClick
         })));
       };
