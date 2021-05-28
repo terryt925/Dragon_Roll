@@ -26,14 +26,15 @@ body {
 
 header {
   background-color: rgba(255, 255, 255, 0.986);
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
   box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);
+  width: 100%;
   
 
 }
 
-.header {
+.header-title {
   font-size: 80px;
   font-family: 'Bebas Neue', cursive;
   color: #f47521;
@@ -44,13 +45,13 @@ header {
   text-shadow: black 1px 1px;
   height: 100%;
   width: 350px;
-
+  text-align: center;
 }
 
 .header:hover {
   color: #e27723;
 }
-
+/* 
 #nav {
   position: absolute; 
   top: 4.5px; 
@@ -58,11 +59,9 @@ header {
   width: 100px; 
   line-height: 2.7;
 
-}
+} */
 
-
-
-#bookmark {
+/* #bookmark {
   position: absolute; 
   top: 4.5px; 
   right: 125px; 
@@ -76,7 +75,7 @@ header {
   right: 245px;
   width: 100px;
   line-height: 2.7;
-}
+} */
 
 .button {
   background-color: #f78c25;
@@ -143,5 +142,24 @@ header {
     margin-top: 20px;
   }
 
+  .seperate-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-left: 8%;
+    padding-right: 3%;
+    /* margin: auto; */
+  }
 
+  .seperate-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-right: 5px;
+    padding-left: 5px;
+  }
 
+  .center-header {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }

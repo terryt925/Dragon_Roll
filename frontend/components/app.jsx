@@ -3,7 +3,7 @@ import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import GreetingContainer from './greeting/greeting_container';
 // import HomeContainer from './home/home_container';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 import AnimeIndexContainer from './anime/anime_index_container';
 import Banner from './banner/banner_container'
@@ -19,11 +19,13 @@ const NoMatchPage = () => {
 
 export default () => (
   <div>
-    <header >
-      <Link to="/" style={{ textDecoration: 'none' }}>
-        <h1 className="header">Dragon Roll</h1>
-      </Link>
-      <GreetingContainer />
+    <header>
+      {/* <div className='seperate-header'> */}
+        {/* <Link to="/" style={{ textDecoration: 'none' }}>
+          <h1 className="header-title">Dragon Roll</h1>
+        </Link> */}
+        <GreetingContainer />
+      {/* </div> */}
     </header>
     <Banner />
     <Switch>

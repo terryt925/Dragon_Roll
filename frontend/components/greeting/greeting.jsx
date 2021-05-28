@@ -1,23 +1,36 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
-    <nav>
-     </nav>
+    <div className='center-header'>
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <h1 className="header-title">Dragon Roll</h1>
+      </Link>
+    </div>
   );
   const personalGreeting = () => (
-    <hgroup >
-      <NavLink activeClassName="selected"  exact to="/" >
-        <input id="anime" className="navi-button" readOnly value="Anime"/>
-      </NavLink>
-      <NavLink activeClassName="selected"  exact to="/bookmarks" >
-        <input id="bookmark" className="navi-button" readOnly value="Queue"/>
-      </NavLink>
-      <input id="nav" className="button" onClick={logout} readOnly value="Log Out"/>
-    </hgroup>
+
+    <div className='seperate-header'>
+
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <h1 className="header-title">Dragon Roll</h1>
+      </Link>
+
+      <hgroup className='seperate-buttons'>
+        <Link to="/" >
+          <input id="anime" className="navi-button" readOnly value="Anime"/>
+        </Link>
+        <Link to="/bookmarks" >
+          <input id="bookmark" className="navi-button" readOnly value="Queue"/>
+        </Link>
+        <input className="button" onClick={logout} readOnly value="Log Out"/>
+      </hgroup>
+
+    </div>
+
   );
 
   return currentUser ? personalGreeting() : sessionLinks();
