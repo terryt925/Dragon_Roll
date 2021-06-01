@@ -311,18 +311,17 @@ body {
     text-align: center;
   }
 
-  .queue-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .queue-button:hover {
+    svg{
+      fill: #f78c25;
+    }
+    p{
+      color: #f78c25;
+    }
   }
-
-  .button-title {
-    font-family: "Helvetica Neue",Arial,sans-serif;
-    color:rgb(0, 0, 0);
-    // margin-top: -15%;
-    // width: 50px;
+  
+  #anime-button-title {
+    margin-top: 5px;
   }
 
   hgroup a {
