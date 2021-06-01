@@ -20,11 +20,18 @@ const Greeting = ({ currentUser, logout }) => {
       </Link>
 
       <hgroup className='seperate-buttons'>
-        <Link to="/" >
+        <Link to="/" style={{ textDecoration: 'none' }}>
           <input id="anime" className="navi-button" readOnly value="Anime"/>
         </Link>
-        <Link to="/bookmarks" >
-          <input id="bookmark" className="navi-button" readOnly value="Queue"/>
+        <Link to="/bookmarks" style={{ textDecoration: 'none' }}>
+          <div className='queue-button'>
+            <img id='bookmark' src={"/bookmarkOne.png"} width='45' height='50'
+              alt="bookmarked by amy morgan from the Noun Project" 
+            />
+            <p className='button-title'>Queue</p>
+          </div>
+          {/* <input id="bookmark" className="navi-button" readOnly value="Queue"/> */}
+          {/* bookmarked by amy morgan from the Noun Project */}
         </Link>
         <input className="button" onClick={logout} readOnly value="Log Out"/>
       </hgroup>

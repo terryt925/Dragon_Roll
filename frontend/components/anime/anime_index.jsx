@@ -12,8 +12,10 @@ class AnimeIndex extends React.Component {
     
     return (
       <div >
-        <p className="anime-heading" >Anime</p>
-        <p className="line" ></p>
+        <div className='anime-index-title'>
+          <p className="anime-heading" >Anime</p>
+          <p className="line" ></p>
+        </div>
         <div className='center-thumbnails'>
           <div className="thumbnails" >
             {
