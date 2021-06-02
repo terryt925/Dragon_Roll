@@ -348,3 +348,35 @@ body {
       // background-color: #f78c25;
     }
   }
+
+  .hover-after {
+    position: relative;
+  }
+
+  .hover-after a[data]:hover::after {
+    content: attr(data);
+    padding: 4px 8px;
+    color: rgb(252, 252, 252);
+    position: absolute;
+    // right: 0;
+    left: 110%;
+    top: 15%;
+    width: 250px;
+    padding: 10px;
+    // white-space: nowrap;
+    z-index: 2;
+    border-radius: 5px ;
+    background-color: rgb(39, 39, 39);
+    // transition: background-color 1s;
+    // transition-property: padding, content, position, color, left, top, width, z-index, border-radius, background-color, ;
+    // transition-duration: 10s;
+    // transition-delay: 10s;
+    // transition: background-color 1s ease;
+  }
+
+  // a[data] {
+  //   transition-property: padding color left top width border-radius background-color;
+  //   transition-timing-function: ease-in-out;
+  //   transition-duration: 3s;
+  //   transition-delay: 1s;
+  // }

@@ -545,8 +545,11 @@ var AnimeIndexItem = /*#__PURE__*/function (_React$Component) {
         amount = '4 Videos';
       }
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "hover-after"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
         to: "/animes/".concat(this.props.anime.id),
+        data: this.props.anime.synopsis,
         style: {
           textDecoration: 'none'
         }
@@ -554,13 +557,13 @@ var AnimeIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "thumbnail"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
         src: this.props.anime.photo_url,
-        title: this.props.anime.synopsis,
+        alt: this.props.anime.synopsis,
         className: "image"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
         className: "image-text"
       }, this.props.anime.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
         className: "anime-video-amount"
-      }, amount)));
+      }, amount))));
     }
   }]);
 
