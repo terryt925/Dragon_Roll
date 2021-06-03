@@ -21,7 +21,7 @@ class AnimeIndexItem extends React.Component {
     return (
       <div className='hover-after'>
         <Link to={`/animes/${this.props.anime.id}`} data={this.props.anime.synopsis} 
-        style={{ textDecoration: 'none' }}>
+        style={{ textDecoration: 'none'}}>
           <ul className="thumbnail">
             <img src={this.props.anime.photo_url} alt={this.props.anime.synopsis} className="image"/>
             <li className="image-text">{this.props.anime.title}</li>

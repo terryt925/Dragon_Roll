@@ -353,25 +353,52 @@ body {
     position: relative;
   }
 
-  .hover-after a[data]:hover::after {
+  .hover-after::after {
+    position: relative;
+  }
+
+  a[data]::after {
+    content: attr(data);
+    opacity:0;
+    transition: 2s all ;
+    // transition-duration: 1s;
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    font-size: 12px;
+    line-height: 14px;
     content: attr(data);
     padding: 4px 8px;
     color: rgb(252, 252, 252);
     position: absolute;
-    // right: 0;
     left: 110%;
     top: 15%;
-    width: 250px;
+    width: 200px;
     padding: 10px;
-    // white-space: nowrap;
-    z-index: 2;
+    z-index: -1;
     border-radius: 5px ;
     background-color: rgb(39, 39, 39);
-    // transition: background-color 1s;
-    // transition-property: padding, content, position, color, left, top, width, z-index, border-radius, background-color, ;
-    // transition-duration: 10s;
-    // transition-delay: 10s;
-    // transition: background-color 1s ease;
+  }
+
+  .hover-after a[data]:hover::after {
+
+    opacity: 1;
+    // font-family: "Helvetica Neue",Arial,sans-serif;
+    // font-size: 12px;
+    // line-height: 14px;
+
+    // content: attr(data);
+    // padding: 4px 8px;
+    // color: rgb(252, 252, 252);
+    position: absolute;
+
+    left: 110%;
+    top: 15%;
+    // width: 200px;
+    // padding: 10px;
+
+    z-index: 2;
+    // border-radius: 5px ;
+    // background-color: rgb(39, 39, 39);
+
   }
 
   // a[data] {

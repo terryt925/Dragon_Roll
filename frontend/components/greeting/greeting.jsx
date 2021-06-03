@@ -15,13 +15,12 @@ const Greeting = ({ currentUser, logout }) => {
 
     <div className='seperate-header'>
 
-      <Link to="/" style={{ textDecoration: 'none' }}>
+      <Link to="/" style={{ textDecoration: 'none' }} >
         <h1 className="header-title">Dragon Roll</h1>
       </Link>
 
       <hgroup className='seperate-buttons'>
-        
-        <Link to="/" style={{ textDecoration: 'none' }}>
+        <Link to="/" style={{ textDecoration: 'none' }} >
           <div className='queue-button'>
             <svg viewBox='0 0 512 512' >
               <path d="M268.278 137.4l-10.384-9.963-10.035 10.332c5.55-5.714 14.653-5.878 20.419-0.369z" />
@@ -44,12 +43,12 @@ const Greeting = ({ currentUser, logout }) => {
             <p className='button-title'>Queue</p>
           </div>
         </Link>
+
         {/* <div className='logout-button'> */}
           <div className='queue-button' onClick={logout}>
             <svg viewBox='0 0 48 48' id='logout-image'>
               <circle cx="16" cy="16" r="8"></circle>
               <path d="M16,28c-5.3,0-16,2.7-16,8v4h32v-4C32,30.7,21.3,28,16,28z"></path>
-              {/* <path d="M34.4,26.5L40,32c0.6,0.6,1.5,0.6,2,0l5.6-5.6c0.9-0.9,0.3-2.5-1-2.5H35.4C34.2,24,33.5,25.6,34.4,26.5z"></path> */}
             </svg>
             <p className="button-title" >Logout</p>
           </div>
