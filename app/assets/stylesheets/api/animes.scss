@@ -353,14 +353,15 @@ body {
     position: relative;
   }
 
-  .hover-after::after {
-    position: relative;
-  }
+  // .hover-after::after {
+  //   position: relative;
+  // }
 
   a[data]::after {
     content: attr(data);
     opacity:0;
-    transition: 2s all ;
+    transition: all;
+    transition-delay: -1s;
     // transition-duration: 1s;
     font-family: "Helvetica Neue",Arial,sans-serif;
     font-size: 12px;
@@ -373,7 +374,7 @@ body {
     top: 15%;
     width: 200px;
     padding: 10px;
-    z-index: -1;
+    z-index: -5;
     border-radius: 5px ;
     background-color: rgb(39, 39, 39);
   }
@@ -384,18 +385,16 @@ body {
     // font-family: "Helvetica Neue",Arial,sans-serif;
     // font-size: 12px;
     // line-height: 14px;
-
     // content: attr(data);
     // padding: 4px 8px;
     // color: rgb(252, 252, 252);
     position: absolute;
-
     left: 110%;
     top: 15%;
     // width: 200px;
     // padding: 10px;
-
     z-index: 2;
+    // pointer-events: none;
     // border-radius: 5px ;
     // background-color: rgb(39, 39, 39);
 
