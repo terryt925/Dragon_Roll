@@ -360,8 +360,8 @@ body {
   a[data]::after {
     content: attr(data);
     opacity:0;
-    transition: all;
-    transition-delay: -1s;
+    transition: all -3s;
+    transition-delay: -3s;
     // transition-duration: 1s;
     font-family: "Helvetica Neue",Arial,sans-serif;
     font-size: 12px;

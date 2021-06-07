@@ -8,15 +8,27 @@ class Bookmark extends React.Component {
 
   render() {
     if (!this.props.bookmarks) return null;
+
+    let bookmarkedAnime;
+
+    bookmarkedAnime = this.props.bookmarks.sort(function(a, b) {
+      return (a.id - b.id);
+    });
+
     return(
       <div>
-        <p>Queued Anime</p>
-        <div>
-          {
-            this.props.bookmarks.map((anime, id) => (
-              <BookmarkItem key={id} anime={anime} />
-            ))
-          }
+        <div className='anime-index-title'>
+          <p className='anime-heading'>My Queue</p>
+          <p className="line" ></p>
+        </div>
+        <div className='center-thumbnails'>
+          <div className='bookmark-index'>
+            {
+              bookmarkedAnime.map((anime, id) => (
+                <BookmarkItem key={id} anime={anime} />
+              ))
+            }
+          </div>
         </div>
       </div>
     )

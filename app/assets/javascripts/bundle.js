@@ -1233,12 +1233,26 @@ var Bookmark = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       if (!this.props.bookmarks) return null;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Queued Anime"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, this.props.bookmarks.map(function (anime, id) {
+      var bookmarkedAnime;
+      bookmarkedAnime = this.props.bookmarks.sort(function (a, b) {
+        return a.id - b.id;
+      });
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "anime-index-title"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        className: "anime-heading"
+      }, "My Queue"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        className: "line"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "center-thumbnails"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "bookmark-index"
+      }, bookmarkedAnime.map(function (anime, id) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_bookmark_item__WEBPACK_IMPORTED_MODULE_1__.default, {
           key: id,
           anime: anime
         });
-      })));
+      }))));
     }
   }]);
 
@@ -1343,14 +1357,31 @@ var BookmarkItem = /*#__PURE__*/function (_React$Component) {
   _createClass(BookmarkItem, [{
     key: "render",
     value: function render() {
+      var amount;
+
+      if (this.props.anime.id !== 16) {
+        amount = '12 Videos';
+      } else {
+        amount = '4 Videos';
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
         to: "/animes/".concat(this.props.anime.id),
         style: {
           textDecoration: 'none'
         }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-        src: this.props.anime.photo_url
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, this.props.anime.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, this.props.anime.synopsis)));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+        className: "bookmark-thumbnail"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        src: this.props.anime.photo_url,
+        className: "bookmark-image"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+        className: "bookmark-image-text"
+      }, this.props.anime.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+        className: "bookmark-amount"
+      }, amount), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+        className: "bookmark-synopsis"
+      }, this.props.anime.synopsis))));
     }
   }]);
 
