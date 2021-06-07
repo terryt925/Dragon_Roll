@@ -56,6 +56,7 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 100px;
+  // flex-direction: column;
 }
 
 .anime-episode-list a {
@@ -107,13 +108,14 @@ body {
   display: relative;
   height: 250px;
   width: 1000px;
-  margin-top: 40px;
+  // margin-top: 40px;
   cursor: pointer;
   border-style: rgb(87, 86, 86) solid;
 }
 
 .header-image:hover {
   box-shadow: 0 3px 3px black;
+  transform: scale(1.01);
 }
 
 .anime-div {
@@ -121,13 +123,14 @@ body {
   align-items: center;
   flex-direction: column;
   position: relative;
+  margin-top: 40px;
 }
 
 .header-text {
   position: absolute;
-  top: 100px;
+  top: 50px;
   right: 700px;
-  color: rgb(226, 137, 19);
+  color: rgb(0, 0, 0);
   font-size: 45px;
   font-weight: 700;
   text-shadow: 1px 1px #000000;
@@ -140,14 +143,23 @@ body {
   font-weight: 700;
   text-shadow: 1px 1px #000000;
   font-family: "Helvetica Neue",Arial,sans-serif;
-  margin-left: 22%;
+  margin-right: 45%;
   margin-top: 30px;
 }
 
 .line {
   border: 1px solid black;
-  margin-left: 18%;
-  margin-right: 18%;
+  // margin-left: 18%;
+  // margin-right: 18%;
+  width: 1150px;
+}
+
+.anime-index-title {
+  // position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .episode-list-container {
@@ -298,3 +310,99 @@ body {
     line-height: 1.2;
     text-align: center;
   }
+
+  .queue-button:hover {
+    svg{
+      fill: #f78c25;
+    }
+    p{
+      color: #f78c25;
+    }
+  }
+  
+  #anime-button-title {
+    margin-top: 5px;
+  }
+
+  hgroup a {
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+  }
+
+  // hgroup p:hover {
+  //   color: #f78c25;
+  // }
+
+  hgroup a:hover {
+    // transform: scale(1.09);
+    // color: #f78c25;
+    p{
+      // z-index: 1;
+      // width: 50px;
+      // transform: scale(1.09);
+      // background-color: #f78c25;
+    }
+    img{
+      // transform: scale(1.09);
+      // background-color: #f78c25;
+    }
+  }
+
+  .hover-after {
+    position: relative;
+  }
+
+  // .hover-after::after {
+  //   position: relative;
+  // }
+
+  a[data]::after {
+    content: attr(data);
+    opacity:0;
+    transition: all -3s;
+    transition-delay: -3s;
+    // transition-duration: 1s;
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    content: attr(data);
+    padding: 4px 8px;
+    color: rgb(252, 252, 252);
+    position: absolute;
+    left: 110%;
+    top: 15%;
+    width: 200px;
+    padding: 10px;
+    z-index: -5;
+    border-radius: 5px ;
+    background-color: rgb(39, 39, 39);
+  }
+
+  .hover-after a[data]:hover::after {
+
+    opacity: 1;
+    // font-family: "Helvetica Neue",Arial,sans-serif;
+    // font-size: 12px;
+    // line-height: 14px;
+    // content: attr(data);
+    // padding: 4px 8px;
+    // color: rgb(252, 252, 252);
+    position: absolute;
+    left: 110%;
+    top: 15%;
+    // width: 200px;
+    // padding: 10px;
+    z-index: 2;
+    // pointer-events: none;
+    // border-radius: 5px ;
+    // background-color: rgb(39, 39, 39);
+
+  }
+
+  // a[data] {
+  //   transition-property: padding color left top width border-radius background-color;
+  //   transition-timing-function: ease-in-out;
+  //   transition-duration: 3s;
+  //   transition-delay: 1s;
+  // }

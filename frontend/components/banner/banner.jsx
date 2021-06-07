@@ -22,7 +22,7 @@ class Banner extends React.Component {
           <Link to="/animes/16" style={{ textDecoration: 'none' }}>
             <img className="header-image" 
               src={"/header.jpg"} 
-              alt="Your Name" 
+              title="Your Name" 
               onClick={this.handleClick}
             />
             {/* <p className="header-text" style={{ textDecoration: 'none' }}>WATCH NOW</p> */}

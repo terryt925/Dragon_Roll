@@ -4,15 +4,18 @@ import AnimeIndexItem from './anime_index_item';
 
 class AnimeIndex extends React.Component {
   componentDidMount() {
-    this.props.requestAnimes()
+    this.props.requestAnimes();
+    this.props.requestBookmarks();
   }
 
   render() {
     
     return (
       <div >
-        <p className="anime-heading" >Anime</p>
-        <p className="line" ></p>
+        <div className='anime-index-title'>
+          <p className="anime-heading" >Anime</p>
+          <p className="line" ></p>
+        </div>
         <div className='center-thumbnails'>
           <div className="thumbnails" >
             {

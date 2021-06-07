@@ -10,9 +10,9 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Bookmark
 
-  has_many :bookmarked_episodes,
+  has_many :bookmarked_animes,
     through: :bookmarks,
-    source: :episode
+    source: :anime
 
   after_initialize :ensure_session_token
 

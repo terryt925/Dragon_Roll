@@ -153,6 +153,89 @@ var requestAnime = function requestAnime(animeId) {
 
 /***/ }),
 
+/***/ "./frontend/actions/bookmark_actions.js":
+/*!**********************************************!*\
+  !*** ./frontend/actions/bookmark_actions.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RECEIVE_ALL_BOOKMARKS": () => (/* binding */ RECEIVE_ALL_BOOKMARKS),
+/* harmony export */   "RECEIVE_BOOKMARK": () => (/* binding */ RECEIVE_BOOKMARK),
+/* harmony export */   "REMOVE_BOOKMARK": () => (/* binding */ REMOVE_BOOKMARK),
+/* harmony export */   "requestBookmarks": () => (/* binding */ requestBookmarks),
+/* harmony export */   "requestBookmark": () => (/* binding */ requestBookmark),
+/* harmony export */   "createBookmark": () => (/* binding */ createBookmark),
+/* harmony export */   "updateBookmark": () => (/* binding */ updateBookmark),
+/* harmony export */   "deleteBookmark": () => (/* binding */ deleteBookmark)
+/* harmony export */ });
+/* harmony import */ var _utils_bookmark__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/bookmark */ "./frontend/utils/bookmark.jsx");
+
+var RECEIVE_ALL_BOOKMARKS = 'RECEIVE_ALL_BOOKMARKS';
+var RECEIVE_BOOKMARK = 'RECEIVE_BOOKMARK';
+var REMOVE_BOOKMARK = 'REMOVE_BOOKMARK';
+
+var receiveAllBookmarks = function receiveAllBookmarks(bookmarks) {
+  return {
+    type: RECEIVE_ALL_BOOKMARKS,
+    bookmarks: bookmarks
+  };
+};
+
+var receiveBookmark = function receiveBookmark(bookmark) {
+  return {
+    type: RECEIVE_BOOKMARK,
+    bookmark: bookmark
+  };
+};
+
+var removeBookmark = function removeBookmark(bookmarkId) {
+  return {
+    type: REMOVE_BOOKMARK,
+    bookmarkId: bookmarkId
+  };
+};
+
+var requestBookmarks = function requestBookmarks() {
+  return function (dispatch) {
+    return _utils_bookmark__WEBPACK_IMPORTED_MODULE_0__.fetchBookmarks().then(function (bookmarks) {
+      return dispatch(receiveAllBookmarks(bookmarks));
+    });
+  };
+};
+var requestBookmark = function requestBookmark(bookmarkId) {
+  return function (dispatch) {
+    return _utils_bookmark__WEBPACK_IMPORTED_MODULE_0__.fetchBookmark(bookmarkId).then(function (bookmark) {
+      return dispatch(receiveBookmark(bookmark));
+    });
+  };
+};
+var createBookmark = function createBookmark(bookmark) {
+  return function (dispatch) {
+    return _utils_bookmark__WEBPACK_IMPORTED_MODULE_0__.createBookmark(bookmark).then(function (bookmark) {
+      return dispatch(receiveBookmark(bookmark));
+    });
+  };
+};
+var updateBookmark = function updateBookmark(bookmark) {
+  return function (dispatch) {
+    return _utils_bookmark__WEBPACK_IMPORTED_MODULE_0__.updateBookmark(bookmark).then(function (bookmark) {
+      return dispatch(receiveBookmark(bookmark));
+    });
+  };
+};
+var deleteBookmark = function deleteBookmark(bookmarkId) {
+  return function (dispatch) {
+    return _utils_bookmark__WEBPACK_IMPORTED_MODULE_0__.deleteBookmark(bookmarkId).then(function (res) {
+      return dispatch(removeBookmark(res));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/episode_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/episode_actions.js ***!
@@ -326,15 +409,18 @@ var AnimeIndex = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.requestAnimes();
+      this.props.requestBookmarks();
     }
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "anime-index-title"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "anime-heading"
       }, "Anime"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "line"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "center-thumbnails"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "thumbnails"
@@ -368,6 +454,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_anime_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/anime_actions */ "./frontend/actions/anime_actions.js");
 /* harmony import */ var _anime_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./anime_index */ "./frontend/components/anime/anime_index.jsx");
+/* harmony import */ var _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/bookmark_actions */ "./frontend/actions/bookmark_actions.js");
+
 
 
 
@@ -378,10 +466,13 @@ var mSTP = function mSTP(state) {
   };
 };
 
-var mDTP = function mDTP(dipatch) {
+var mDTP = function mDTP(dispatch) {
   return {
     requestAnimes: function requestAnimes() {
-      return dipatch((0,_actions_anime_actions__WEBPACK_IMPORTED_MODULE_1__.requestAnimes)());
+      return dispatch((0,_actions_anime_actions__WEBPACK_IMPORTED_MODULE_1__.requestAnimes)());
+    },
+    requestBookmarks: function requestBookmarks() {
+      return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_3__.requestBookmarks)());
     }
   };
 };
@@ -454,8 +545,11 @@ var AnimeIndexItem = /*#__PURE__*/function (_React$Component) {
         amount = '4 Videos';
       }
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "hover-after"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
         to: "/animes/".concat(this.props.anime.id),
+        data: this.props.anime.synopsis,
         style: {
           textDecoration: 'none'
         }
@@ -463,12 +557,13 @@ var AnimeIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "thumbnail"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
         src: this.props.anime.photo_url,
+        alt: this.props.anime.synopsis,
         className: "image"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
         className: "image-text"
       }, this.props.anime.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
         className: "anime-video-amount"
-      }, amount)));
+      }, amount))));
     }
   }]);
 
@@ -522,24 +617,64 @@ var EpisodeIndex = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(EpisodeIndex);
 
-  function EpisodeIndex() {
+  function EpisodeIndex(props) {
+    var _this;
+
     _classCallCheck(this, EpisodeIndex);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.createClick = _this.createClick.bind(_assertThisInitialized(_this));
+    _this.deleteClick = _this.deleteClick.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(EpisodeIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.requestAnime(this.props.match.params.id);
-      window.scrollTo(0, 0);
+      this.props.requestAnime(this.props.match.params.id); // this.props.requestAnime(this.props.anime.id);
+      // window.scrollTo(0, 0);
+
+      this.props.requestBookmarks();
+    }
+  }, {
+    key: "createClick",
+    value: function createClick(e) {
+      e.preventDefault();
+      this.props.createBookmark(this.props.bookmark); // .then(this.props.requestAnime(this.props.match.params.id))
+    }
+  }, {
+    key: "deleteClick",
+    value: function deleteClick(e) {
+      e.preventDefault();
+      this.props.deleteBookmark(this.props.bookmark.anime_id); // .then(this.props.requestAnime(this.props.match.params.id))
+      // .then(this.props.requestBookmarks())
     }
   }, {
     key: "render",
     value: function render() {
-      // console.log("test",this.props)
+      var _this2 = this;
+
       // debugger
-      if (!this.props.episodes) return null;
+      // console.log(this.props)
+      // console.log(this.props.bookmark.anime_id)
+      var bookmark = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+        onClick: this.createClick,
+        className: "not-bookmarked"
+      }, "Bookmark");
+      this.props.userBookmarks.map(function (anime) {
+        if (anime.id === _this2.props.bookmark.anime_id) {
+          return bookmark = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+            onClick: _this2.deleteClick,
+            className: "bookmarked"
+          }, "Bookmarked");
+        } // else {
+        // bookmark = <button onClick={this.handleClick} className='not-bookmarked'>
+        //             Bookmark
+        //           </button>;
+        // }
+
+      });
+      if (this.props.episodes.length < 1) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "center-episode-list"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -564,7 +699,7 @@ var EpisodeIndex = /*#__PURE__*/function (_React$Component) {
         className: "anime-show-image"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "anime-title"
-      }, this.props.anime.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+      }, this.props.anime.title, bookmark), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "anime-show-line"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "anime-show-text"
@@ -592,8 +727,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_anime_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/anime_actions */ "./frontend/actions/anime_actions.js");
-/* harmony import */ var _anime_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./anime_show */ "./frontend/components/anime/anime_show.jsx");
-/* harmony import */ var _actions_episode_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/episode_actions */ "./frontend/actions/episode_actions.js");
+/* harmony import */ var _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/bookmark_actions */ "./frontend/actions/bookmark_actions.js");
+/* harmony import */ var _anime_show__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./anime_show */ "./frontend/components/anime/anime_show.jsx");
+/* harmony import */ var _actions_episode_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/episode_actions */ "./frontend/actions/episode_actions.js");
+
+
+
 
 
 
@@ -602,22 +741,37 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state) {
   return {
     anime: state.entities.animes,
-    episodes: Object.values(state.entities.episodes)
+    episodes: Object.values(state.entities.episodes),
+    // userId: state.entities.users[1].id,
+    bookmark: {
+      user_id: state.entities.users[1].id,
+      anime_id: state.entities.animes.id
+    },
+    userBookmarks: Object.values(state.entities.bookmarks)
   };
 };
 
-var mDTP = function mDTP(dipatch) {
+var mDTP = function mDTP(dispatch) {
   return {
     requestAnime: function requestAnime(animeId) {
-      return dipatch((0,_actions_anime_actions__WEBPACK_IMPORTED_MODULE_1__.requestAnime)(animeId));
+      return dispatch((0,_actions_anime_actions__WEBPACK_IMPORTED_MODULE_1__.requestAnime)(animeId));
     },
     requestEpisode: function requestEpisode(episodeId) {
-      return dipatch((0,_actions_episode_actions__WEBPACK_IMPORTED_MODULE_3__.requestEpisode)(episodeId));
+      return dispatch((0,_actions_episode_actions__WEBPACK_IMPORTED_MODULE_4__.requestEpisode)(episodeId));
+    },
+    createBookmark: function createBookmark(bookmark) {
+      return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_2__.createBookmark)(bookmark));
+    },
+    deleteBookmark: function deleteBookmark(bookmarkId) {
+      return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_2__.deleteBookmark)(bookmarkId));
+    },
+    requestBookmarks: function requestBookmarks() {
+      return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_2__.requestBookmarks)());
     }
   };
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP, mDTP)(_anime_show__WEBPACK_IMPORTED_MODULE_2__.default));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP, mDTP)(_anime_show__WEBPACK_IMPORTED_MODULE_3__.default));
 
 /***/ }),
 
@@ -726,10 +880,10 @@ var mSTP = function mSTP(state, ownProps) {
   };
 };
 
-var mDTP = function mDTP(dipatch) {
+var mDTP = function mDTP(dispatch) {
   return {
     requestEpisode: function requestEpisode(episodeId) {
-      return dipatch((0,_actions_episode_actions__WEBPACK_IMPORTED_MODULE_2__.requestEpisode)(episodeId));
+      return dispatch((0,_actions_episode_actions__WEBPACK_IMPORTED_MODULE_2__.requestEpisode)(episodeId));
     }
   };
 };
@@ -788,12 +942,13 @@ var EpisodeShow = /*#__PURE__*/function (_React$Component) {
   _createClass(EpisodeShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.requestEpisode(this.props.match.params.id); // window.scrollTo(3, 3);
+      this.props.requestEpisode(this.props.match.params.id); // .then((res) => console.log(res))
+      // window.scrollTo(3, 3);
     }
   }, {
     key: "render",
     value: function render() {
-      console.log(this.props);
+      if (this.props.episode === undefined) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "episode-show-item-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
@@ -828,17 +983,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_signup_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./session/signup_container */ "./frontend/components/session/signup_container.jsx");
 /* harmony import */ var _session_login_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./session/login_container */ "./frontend/components/session/login_container.jsx");
 /* harmony import */ var _greeting_greeting_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./greeting/greeting_container */ "./frontend/components/greeting/greeting_container.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _utils_route_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/route_util */ "./frontend/utils/route_util.jsx");
 /* harmony import */ var _anime_anime_index_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./anime/anime_index_container */ "./frontend/components/anime/anime_index_container.jsx");
 /* harmony import */ var _banner_banner_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./banner/banner_container */ "./frontend/components/banner/banner_container.jsx");
 /* harmony import */ var _anime_anime_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./anime/anime_show_container */ "./frontend/components/anime/anime_show_container.jsx");
 /* harmony import */ var _anime_episode_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./anime/episode_container */ "./frontend/components/anime/episode_container.jsx");
+/* harmony import */ var _bookmark_bookmark_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./bookmark/bookmark_container */ "./frontend/components/bookmark/bookmark_container.js");
 
 
 
  // import HomeContainer from './home/home_container';
+
 
 
 
@@ -854,14 +1010,7 @@ var NoMatchPage = function NoMatchPage() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
-    to: "/",
-    style: {
-      textDecoration: 'none'
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
-    className: "header"
-  }, "Dragon Roll")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_3__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_banner_banner_container__WEBPACK_IMPORTED_MODULE_6__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_4__.AuthRoute, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_3__.default, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_banner_banner_container__WEBPACK_IMPORTED_MODULE_6__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_4__.AuthRoute, {
     exact: true,
     path: "/signup",
     component: _session_signup_container__WEBPACK_IMPORTED_MODULE_1__.default
@@ -881,6 +1030,10 @@ var NoMatchPage = function NoMatchPage() {
     exact: true,
     path: "/episodes/:id",
     component: _anime_episode_container__WEBPACK_IMPORTED_MODULE_8__.default
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_4__.ProtectedRoute, {
+    exact: true,
+    path: "/bookmarks",
+    component: _bookmark_bookmark_container__WEBPACK_IMPORTED_MODULE_9__.default
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
     component: NoMatchPage
   })));
@@ -968,7 +1121,7 @@ var Banner = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           className: "header-image",
           src: "/header.jpg",
-          alt: "Your Name",
+          title: "Your Name",
           onClick: _this2.handleClick
         })));
       };
@@ -1022,6 +1175,223 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/components/bookmark/bookmark.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/bookmark/bookmark.jsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _bookmark_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bookmark_item */ "./frontend/components/bookmark/bookmark_item.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var Bookmark = /*#__PURE__*/function (_React$Component) {
+  _inherits(Bookmark, _React$Component);
+
+  var _super = _createSuper(Bookmark);
+
+  function Bookmark() {
+    _classCallCheck(this, Bookmark);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(Bookmark, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.requestBookmarks();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (!this.props.bookmarks) return null;
+      var bookmarkedAnime;
+      bookmarkedAnime = this.props.bookmarks.sort(function (a, b) {
+        return a.id - b.id;
+      });
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "anime-index-title"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        className: "anime-heading"
+      }, "My Queue"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        className: "line"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "center-thumbnails"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "bookmark-index"
+      }, bookmarkedAnime.map(function (anime, id) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_bookmark_item__WEBPACK_IMPORTED_MODULE_1__.default, {
+          key: id,
+          anime: anime
+        });
+      }))));
+    }
+  }]);
+
+  return Bookmark;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Bookmark);
+
+/***/ }),
+
+/***/ "./frontend/components/bookmark/bookmark_container.js":
+/*!************************************************************!*\
+  !*** ./frontend/components/bookmark/bookmark_container.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/bookmark_actions */ "./frontend/actions/bookmark_actions.js");
+/* harmony import */ var _bookmark__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./bookmark */ "./frontend/components/bookmark/bookmark.jsx");
+
+
+
+
+var mSTP = function mSTP(state) {
+  return {
+    bookmarks: Object.values(state.entities.bookmarks)
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    requestBookmarks: function requestBookmarks() {
+      return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_1__.requestBookmarks)());
+    },
+    requestBookmark: function requestBookmark(bookmarkId) {
+      return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_1__.requestBookmark)(bookmarkId));
+    },
+    removeBookmark: function removeBookmark(bookmarkId) {
+      return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_1__.removeBookmark)(bookmarkId));
+    }
+  };
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP, mDTP)(_bookmark__WEBPACK_IMPORTED_MODULE_2__.default));
+
+/***/ }),
+
+/***/ "./frontend/components/bookmark/bookmark_item.jsx":
+/*!********************************************************!*\
+  !*** ./frontend/components/bookmark/bookmark_item.jsx ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var BookmarkItem = /*#__PURE__*/function (_React$Component) {
+  _inherits(BookmarkItem, _React$Component);
+
+  var _super = _createSuper(BookmarkItem);
+
+  function BookmarkItem() {
+    _classCallCheck(this, BookmarkItem);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(BookmarkItem, [{
+    key: "render",
+    value: function render() {
+      var amount;
+
+      if (this.props.anime.id !== 16) {
+        amount = '12 Videos';
+      } else {
+        amount = '4 Videos';
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+        to: "/animes/".concat(this.props.anime.id),
+        style: {
+          textDecoration: 'none'
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+        className: "bookmark-thumbnail"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        src: this.props.anime.photo_url,
+        className: "bookmark-image"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+        className: "bookmark-image-text"
+      }, this.props.anime.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+        className: "bookmark-amount"
+      }, amount), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+        className: "bookmark-synopsis"
+      }, this.props.anime.synopsis))));
+    }
+  }]);
+
+  return BookmarkItem;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BookmarkItem);
+
+/***/ }),
+
 /***/ "./frontend/components/greeting/greeting.jsx":
 /*!***************************************************!*\
   !*** ./frontend/components/greeting/greeting.jsx ***!
@@ -1043,26 +1413,78 @@ var Greeting = function Greeting(_ref) {
       logout = _ref.logout;
 
   var sessionLinks = function sessionLinks() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", null);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "center-header"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      to: "/",
+      style: {
+        textDecoration: 'none'
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+      className: "header-title"
+    }, "Dragon Roll")));
   };
 
   var personalGreeting = function personalGreeting() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("hgroup", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.NavLink, {
-      activeClassName: "selected",
-      exact: true,
-      to: "/"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-      id: "anime",
-      className: "navi-button",
-      readOnly: true,
-      value: "Anime"
-    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-      id: "nav",
-      className: "button",
-      onClick: logout,
-      readOnly: true,
-      value: "Log Out"
-    }));
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "seperate-header"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      to: "/",
+      style: {
+        textDecoration: 'none'
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+      className: "header-title"
+    }, "Dragon Roll")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("hgroup", {
+      className: "seperate-buttons"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      to: "/",
+      style: {
+        textDecoration: 'none'
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "queue-button"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+      viewBox: "0 0 512 512"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+      d: "M268.278 137.4l-10.384-9.963-10.035 10.332c5.55-5.714 14.653-5.878 20.419-0.369z"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+      d: "M258.233 143.381c1.505 0 2.98 0 4.464 0 5.806 0.583 11.090 2.304 15.442 4.741l93.245-95.897c5.56-5.745 5.438-14.889-0.297-20.5-5.745-5.54-14.919-5.438-20.5 0.317l-92.682 95.396 10.384 9.964c-5.765-5.509-14.879-5.345-20.429 0.369l10.035-10.332-102.799-98.745c-5.765-5.54-14.93-5.366-20.48 0.41-5.519 5.776-5.335 14.95 0.42 20.5l103.107 99.001c4.178-2.703 9.472-4.618 15.626-5.222 1.475 0 2.98 0 4.465 0z"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+      d: "M396.738 167.198h-107.243c0-1.495 0-2.98 0-2.98 0-6.38-4.485-12.196-11.356-16.097l-9.502 9.81c-5.581 5.724-14.704 5.878-20.429 0.348l-10.066-9.677c-6.011 3.881-9.687 9.493-9.687 15.616 0 0 0 1.495 0 2.98h-113.162c-32.788 0-59.577 26.809-59.577 59.556v189.154c0 34.243 26.788 61.061 59.577 61.061h7.424v10.384h269.527v-10.384h4.495c32.758 0 59.536-26.819 59.536-61.061v-189.143c0.010-32.758-26.777-59.566-59.536-59.566zM370.76 476.109c-7.803 0-14.121-6.339-14.121-14.162s6.318-14.121 14.121-14.121c7.824 0 14.142 6.298 14.142 14.121s-6.318 14.162-14.142 14.162zM407.163 393.575c0 25.303-20.839 44.677-44.677 44.677h-212.941c-25.314 0-44.688-19.385-44.688-44.677v-142.971c0-25.314 19.385-46.172 44.688-46.172h212.931c23.839 0 44.677 20.859 44.677 46.172v142.971z"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+      d: "M268.636 157.931l9.502-9.81c-4.362-2.447-9.636-4.167-15.442-4.741-1.485 0-2.949 0-4.464 0-1.495 0-2.99 0-4.464 0-6.165 0.614-11.448 2.519-15.626 5.222l10.066 9.677c5.724 5.53 14.848 5.376 20.429-0.348z"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+      className: "button-title",
+      id: "anime-button-title"
+    }, "Anime"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      to: "/bookmarks",
+      style: {
+        textDecoration: 'none'
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "queue-button"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+      d: "M33.3,8H14.7C13.2,8,12,9.5,12,11v28.6c0,0.5,0.3,1,0.7,1.2 c0.2,0.1,0.4,0.1,0.6,0.1c0.3,0,0.5-0.1,0.8-0.2l9.9-7.1l9.9,7.1c0.2, 0.2,0.5,0.2,0.8,0.2c0.2,0,0.4,0,0.6-0.1c0.4-0.2,0.7-0.7,0.7-1.2V11C 36,9.5,34.8,8,33.3,8z"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+      className: "button-title"
+    }, "Queue"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "queue-button",
+      onClick: logout
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+      viewBox: "0 0 48 48",
+      id: "logout-image"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("circle", {
+      cx: "16",
+      cy: "16",
+      r: "8"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+      d: "M16,28c-5.3,0-16,2.7-16,8v4h32v-4C32,30.7,21.3,28,16,28z"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+      className: "button-title"
+    }, "Logout"))));
   };
 
   return currentUser ? personalGreeting() : sessionLinks();
@@ -1515,6 +1937,48 @@ var animeReducer = function animeReducer() {
 
 /***/ }),
 
+/***/ "./frontend/reducers/bookmark_reducer.js":
+/*!***********************************************!*\
+  !*** ./frontend/reducers/bookmark_reducer.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/bookmark_actions */ "./frontend/actions/bookmark_actions.js");
+
+
+var bookmarkReducer = function bookmarkReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var nextState = Object.assign({}, state);
+
+  switch (action.type) {
+    case _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_ALL_BOOKMARKS:
+      return Object.assign({}, action.bookmarks);
+
+    case _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_BOOKMARK:
+      return Object.assign({}, state, action.bookmark);
+
+    case _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_0__.REMOVE_BOOKMARK:
+      // delete nextState[action.bookmarkId];
+      // delete nextState[action.bookmarkId];
+      // console.log(action.bookmarkId);
+      return action.bookmarkId;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (bookmarkReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/entities_reducer.js":
 /*!***********************************************!*\
   !*** ./frontend/reducers/entities_reducer.js ***!
@@ -1526,18 +1990,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _user_reducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user_reducer */ "./frontend/reducers/user_reducer.js");
 /* harmony import */ var _anime_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./anime_reducer */ "./frontend/reducers/anime_reducer.js");
 /* harmony import */ var _episode_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./episode_reducer */ "./frontend/reducers/episode_reducer.js");
+/* harmony import */ var _bookmark_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./bookmark_reducer */ "./frontend/reducers/bookmark_reducer.js");
 
 
 
 
-var entitiesReducer = (0,redux__WEBPACK_IMPORTED_MODULE_3__.combineReducers)({
+
+var entitiesReducer = (0,redux__WEBPACK_IMPORTED_MODULE_4__.combineReducers)({
   users: _user_reducer__WEBPACK_IMPORTED_MODULE_0__.default,
   animes: _anime_reducer__WEBPACK_IMPORTED_MODULE_1__.default,
-  episodes: _episode_reducer__WEBPACK_IMPORTED_MODULE_2__.default
+  episodes: _episode_reducer__WEBPACK_IMPORTED_MODULE_2__.default,
+  bookmarks: _bookmark_reducer__WEBPACK_IMPORTED_MODULE_3__.default
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (entitiesReducer);
 
@@ -1574,7 +2041,7 @@ var episodeReducer = function episodeReducer() {
       return nextState;
 
     default:
-      return {};
+      return state;
   }
 };
 
@@ -1796,6 +2263,60 @@ var fetchAnime = function fetchAnime(animeId) {
 //   method: 'GET',
 //   url: '/api/animes/0'
 // })
+
+/***/ }),
+
+/***/ "./frontend/utils/bookmark.jsx":
+/*!*************************************!*\
+  !*** ./frontend/utils/bookmark.jsx ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "fetchBookmarks": () => (/* binding */ fetchBookmarks),
+/* harmony export */   "fetchBookmark": () => (/* binding */ fetchBookmark),
+/* harmony export */   "createBookmark": () => (/* binding */ createBookmark),
+/* harmony export */   "updateBookmark": () => (/* binding */ updateBookmark),
+/* harmony export */   "deleteBookmark": () => (/* binding */ deleteBookmark)
+/* harmony export */ });
+var fetchBookmarks = function fetchBookmarks() {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/bookmarks'
+  });
+};
+var fetchBookmark = function fetchBookmark(bookmarkId) {
+  return $.ajax({
+    method: 'GET',
+    url: "/api/bookmarks".concat(bookmarkId)
+  });
+};
+var createBookmark = function createBookmark(bookmark) {
+  return $.ajax({
+    method: "POST",
+    url: "/api/bookmarks",
+    data: {
+      bookmark: bookmark
+    }
+  });
+};
+var updateBookmark = function updateBookmark(bookmark) {
+  return $.ajax({
+    method: "PATCH",
+    url: "/api/bookmarks/".concat(bookmark.id),
+    data: {
+      bookmark: bookmark
+    }
+  });
+};
+var deleteBookmark = function deleteBookmark(id) {
+  return $.ajax({
+    method: "DELETE",
+    url: "/api/bookmarks/".concat(id)
+  });
+};
 
 /***/ }),
 
@@ -38371,6 +38892,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+ // import { deleteBookmark } from './actions/bookmark_actions';
+// import {createBookmark} from './actions/bookmark_actions';
+// import { requestBookmarks } from './actions/bookmark_actions';
 
 document.addEventListener('DOMContentLoaded', function () {
   var store;
@@ -38391,6 +38915,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   window.getState = store.getState;
+  window.dispatch = store.dispatch; // window.createBookmark = createBookmark;
+  // window.deleteBookmark = deleteBookmark;
+  // window.requestBookmarks = requestBookmarks;
+
   var root = document.getElementById('root');
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__.default, {
     store: store

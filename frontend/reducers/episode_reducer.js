@@ -14,7 +14,7 @@ const episodeReducer = (state = {}, action) => {
       nextState[action.episode.episodes.id] = action.episode.episodes
       return nextState
     default:
-      return {};
+      return state;
   }
 };
 
