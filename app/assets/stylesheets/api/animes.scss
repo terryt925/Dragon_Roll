@@ -264,6 +264,9 @@ body {
   font-family: "Helvetica Neue",Arial,sans-serif;
   line-height: 1.2;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .anime-show-line {

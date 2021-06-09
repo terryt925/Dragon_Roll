@@ -36,14 +36,24 @@ class EpisodeIndex extends React.Component {
     // debugger
     // console.log(this.props)
     // console.log(this.props.bookmark.anime_id)
-    let bookmark = <button onClick={this.createClick} className='not-bookmarked'>
-                    Bookmark
-                  </button>;
+    let bookmark = <div onClick={this.createClick} className='not-bookmarked'>
+                    <svg viewBox='0 0 48 48'>
+                      <path d="M33.3,8H14.7C13.2,8,12,9.5,12,11v28.6c0,0.5,0.3,1,0.7,1.2
+                      c0.2,0.1,0.4,0.1,0.6,0.1c0.3,0,0.5-0.1,0.8-0.2l9.9-7.1l9.9,7.1c0.2,
+                      0.2,0.5,0.2,0.8,0.2c0.2,0,0.4,0,0.6-0.1c0.4-0.2,0.7-0.7,0.7-1.2V11C
+                      36,9.5,34.8,8,33.3,8z"></path>
+                    </svg>
+                  </div>;
     this.props.userBookmarks.map((anime) => {
       if (anime.id === this.props.bookmark.anime_id) {
-        return bookmark = <button onClick={this.deleteClick} className='bookmarked'>
-                    Bookmarked
-                  </button>;
+        return bookmark = <div onClick={this.deleteClick} className='bookmarked'>
+                    <svg viewBox='0 0 48 48'>
+                      <path d="M33.3,8H14.7C13.2,8,12,9.5,12,11v28.6c0,0.5,0.3,1,0.7,1.2
+                      c0.2,0.1,0.4,0.1,0.6,0.1c0.3,0,0.5-0.1,0.8-0.2l9.9-7.1l9.9,7.1c0.2,
+                      0.2,0.5,0.2,0.8,0.2c0.2,0,0.4,0,0.6-0.1c0.4-0.2,0.7-0.7,0.7-1.2V11C
+                      36,9.5,34.8,8,33.3,8z"></path>
+                    </svg>
+                  </div>;
       } 
       // else {
         // bookmark = <button onClick={this.handleClick} className='not-bookmarked'>
@@ -68,9 +78,9 @@ class EpisodeIndex extends React.Component {
           </div>
           <div className="anime-show-description">
             <img src={this.props.anime.photo_url} className="anime-show-image" />
-            <p className="anime-title">{this.props.anime.title}
+            <div className="anime-title">{this.props.anime.title}
               {bookmark}
-            </p>
+            </div>
             <p className="anime-show-line"></p>
             <p className="anime-show-text">{this.props.anime.synopsis}</p>
           </div>

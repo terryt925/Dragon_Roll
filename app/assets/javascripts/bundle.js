@@ -414,6 +414,8 @@ var AnimeIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "anime-index-title"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
@@ -427,7 +429,9 @@ var AnimeIndex = /*#__PURE__*/function (_React$Component) {
       }, this.props.animes.map(function (anime, id) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_anime_index_item__WEBPACK_IMPORTED_MODULE_1__.default, {
           key: id,
-          anime: anime
+          anime: anime,
+          deleteBookmark: _this.props.deleteBookmark,
+          createBookmark: _this.props.createBookmark
         });
       }))));
     }
@@ -460,6 +464,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var mSTP = function mSTP(state) {
   return {
     animes: Object.values(state.entities.animes)
@@ -473,6 +478,9 @@ var mDTP = function mDTP(dispatch) {
     },
     requestBookmarks: function requestBookmarks() {
       return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_3__.requestBookmarks)());
+    },
+    deleteBookmark: function deleteBookmark(bookmarkId) {
+      return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_3__.deleteBookmark)(bookmarkId));
     }
   };
 };
@@ -657,16 +665,24 @@ var EpisodeIndex = /*#__PURE__*/function (_React$Component) {
       // debugger
       // console.log(this.props)
       // console.log(this.props.bookmark.anime_id)
-      var bookmark = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      var bookmark = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         onClick: this.createClick,
         className: "not-bookmarked"
-      }, "Bookmark");
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+        viewBox: "0 0 48 48"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+        d: "M33.3,8H14.7C13.2,8,12,9.5,12,11v28.6c0,0.5,0.3,1,0.7,1.2 c0.2,0.1,0.4,0.1,0.6,0.1c0.3,0,0.5-0.1,0.8-0.2l9.9-7.1l9.9,7.1c0.2, 0.2,0.5,0.2,0.8,0.2c0.2,0,0.4,0,0.6-0.1c0.4-0.2,0.7-0.7,0.7-1.2V11C 36,9.5,34.8,8,33.3,8z"
+      })));
       this.props.userBookmarks.map(function (anime) {
         if (anime.id === _this2.props.bookmark.anime_id) {
-          return bookmark = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+          return bookmark = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
             onClick: _this2.deleteClick,
             className: "bookmarked"
-          }, "Bookmarked");
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+            viewBox: "0 0 48 48"
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+            d: "M33.3,8H14.7C13.2,8,12,9.5,12,11v28.6c0,0.5,0.3,1,0.7,1.2 c0.2,0.1,0.4,0.1,0.6,0.1c0.3,0,0.5-0.1,0.8-0.2l9.9-7.1l9.9,7.1c0.2, 0.2,0.5,0.2,0.8,0.2c0.2,0,0.4,0,0.6-0.1c0.4-0.2,0.7-0.7,0.7-1.2V11C 36,9.5,34.8,8,33.3,8z"
+          })));
         } // else {
         // bookmark = <button onClick={this.handleClick} className='not-bookmarked'>
         //             Bookmark
@@ -697,7 +713,7 @@ var EpisodeIndex = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
         src: this.props.anime.photo_url,
         className: "anime-show-image"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "anime-title"
       }, this.props.anime.title, bookmark), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "anime-show-line"
@@ -989,7 +1005,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _banner_banner_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./banner/banner_container */ "./frontend/components/banner/banner_container.jsx");
 /* harmony import */ var _anime_anime_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./anime/anime_show_container */ "./frontend/components/anime/anime_show_container.jsx");
 /* harmony import */ var _anime_episode_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./anime/episode_container */ "./frontend/components/anime/episode_container.jsx");
-/* harmony import */ var _bookmark_bookmark_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./bookmark/bookmark_container */ "./frontend/components/bookmark/bookmark_container.js");
+/* harmony import */ var _bookmark_bookmark_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./bookmark/bookmark_container */ "./frontend/components/bookmark/bookmark_container.jsx");
 
 
 
@@ -1232,6 +1248,8 @@ var Bookmark = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       if (!this.props.bookmarks) return null;
       var bookmarkedAnime;
       bookmarkedAnime = this.props.bookmarks.sort(function (a, b) {
@@ -1250,7 +1268,8 @@ var Bookmark = /*#__PURE__*/function (_React$Component) {
       }, bookmarkedAnime.map(function (anime, id) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_bookmark_item__WEBPACK_IMPORTED_MODULE_1__.default, {
           key: id,
-          anime: anime
+          anime: anime,
+          deleteBookmark: _this.props.deleteBookmark
         });
       }))));
     }
@@ -1263,10 +1282,10 @@ var Bookmark = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/components/bookmark/bookmark_container.js":
-/*!************************************************************!*\
-  !*** ./frontend/components/bookmark/bookmark_container.js ***!
-  \************************************************************/
+/***/ "./frontend/components/bookmark/bookmark_container.jsx":
+/*!*************************************************************!*\
+  !*** ./frontend/components/bookmark/bookmark_container.jsx ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1277,6 +1296,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/bookmark_actions */ "./frontend/actions/bookmark_actions.js");
 /* harmony import */ var _bookmark__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./bookmark */ "./frontend/components/bookmark/bookmark.jsx");
+
+
 
 
 
@@ -1297,6 +1318,12 @@ var mDTP = function mDTP(dispatch) {
     },
     removeBookmark: function removeBookmark(bookmarkId) {
       return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_1__.removeBookmark)(bookmarkId));
+    },
+    deleteBookmark: function deleteBookmark(bookmarkId) {
+      return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_1__.deleteBookmark)(bookmarkId));
+    },
+    createBookmark: function createBookmark(bookmark) {
+      return dispatch((0,_actions_bookmark_actions__WEBPACK_IMPORTED_MODULE_1__.createBookmark)(bookmark));
     }
   };
 };
@@ -1348,15 +1375,28 @@ var BookmarkItem = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(BookmarkItem);
 
-  function BookmarkItem() {
+  function BookmarkItem(props) {
+    var _this;
+
     _classCallCheck(this, BookmarkItem);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+    _this.deleteClick = _this.deleteClick.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(BookmarkItem, [{
+    key: "deleteClick",
+    value: function deleteClick(e) {
+      // debugger
+      e.preventDefault();
+      console.log(this.props);
+      this.props.deleteBookmark(this.props.anime.id);
+    }
+  }, {
     key: "render",
     value: function render() {
+      console.log(this.props);
       var amount;
 
       if (this.props.anime.id !== 16) {
@@ -1381,7 +1421,22 @@ var BookmarkItem = /*#__PURE__*/function (_React$Component) {
         className: "bookmark-amount"
       }, amount), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
         className: "bookmark-synopsis"
-      }, this.props.anime.synopsis))));
+      }, this.props.anime.synopsis)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "bookmark-trash-can",
+        onClick: this.deleteClick
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
+        "aria-hidden": "true",
+        focusable: "false",
+        "data-prefix": "fas",
+        "data-icon": "trash",
+        className: "svg-inline--fa fa-trash fa-w-14",
+        role: "img",
+        xmlns: "http://www.w3.org/2000/svg",
+        viewBox: "0 0 448 512"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+        fill: "currentColor",
+        d: "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+      })))));
     }
   }]);
 

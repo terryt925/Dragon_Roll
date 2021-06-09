@@ -25,7 +25,7 @@ class Bookmark extends React.Component {
           <div className='bookmark-index'>
             {
               bookmarkedAnime.map((anime, id) => (
-                <BookmarkItem key={id} anime={anime} />
+                <BookmarkItem key={id} anime={anime} deleteBookmark={this.props.deleteBookmark}/>
               ))
             }
           </div>
