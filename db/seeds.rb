@@ -10,6 +10,7 @@ require 'open-uri'
 User.delete_all
 Anime.delete_all
 Episode.delete_all
+Bookmark.delete_all
 
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('animes')

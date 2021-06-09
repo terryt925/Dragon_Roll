@@ -36,6 +36,7 @@
   // opacity: 1;
   // text-align: center;
   padding: 20px;
+  position: relative;
 }
 
 .bookmark-thumbnail:hover {
@@ -87,4 +88,36 @@
   margin-left: 20px;
   margin-bottom: 25px;
   font-size: 20px;
+}
+
+.bookmark-trash-can {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  height: 3%;
+  width: 3%;
+  color: black;
+  z-index: 1;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.09);
+    color: #f78c25;
+  }
+}
+
+.not-bookmarked {
+  fill: rgb(141, 141, 141);
+  cursor: pointer;
+  height: 48px;
+  width: 48px;
+  &:hover {
+    fill: #f78c25;
+  }
+}
+
+.bookmarked {
+  fill: #f78c25;
+  cursor: pointer;
+  height: 48px;
+  width: 48px;
 }

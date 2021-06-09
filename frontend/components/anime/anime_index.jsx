@@ -20,7 +20,12 @@ class AnimeIndex extends React.Component {
           <div className="thumbnails" >
             {
               this.props.animes.map((anime, id) => (
-                  <AnimeIndexItem key={id} anime={anime}  />
+                  <AnimeIndexItem 
+                    key={id} 
+                    anime={anime} 
+                    deleteBookmark={this.props.deleteBookmark} 
+                    createBookmark={this.props.createBookmark}
+                  />
               ))
             }
           </div>
