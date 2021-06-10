@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Search from '../search/search_container';
 
 
 
@@ -53,6 +54,11 @@ const Greeting = ({ currentUser, logout }) => {
             <p className="button-title" >Logout</p>
           </div>
         {/* </div> */}
+
+        <div>
+          < Search />
+        </div>
+
       </hgroup>
 
     </div>
