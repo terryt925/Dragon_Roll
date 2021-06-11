@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Search from '../search/search_container';
 
 
 
@@ -18,6 +19,25 @@ const Greeting = ({ currentUser, logout }) => {
       <Link to="/" style={{ textDecoration: 'none' }} >
         <h1 className="header-title">Dragon Roll</h1>
       </Link>
+
+      <ul className='fab-icons-ul'>
+        {/* <li><a href='https://github.com/terryt925' target='_blank' rel="noreferrer" class="icon brands fa-github"><span class="label">Github</span></a></li> */}
+        <li>
+          <a href='https://github.com/terryt925' target='_blank' rel="noreferrer" className="fab-icons" >
+            <i className="fab fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href='https://www.linkedin.com/in/terry-thind-42a8591a1' target='_blank' rel="noreferrer" className="fab-icons">
+            <i className="fab fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href='https://angel.co/u/terry-thind' target='_blank' rel="noreferrer" className="fab-icons">
+            <i className="fab fa-angellist"></i>
+          </a>
+        </li>
+      </ul>
 
       <hgroup className='seperate-buttons'>
         <Link to="/" style={{ textDecoration: 'none' }} >
@@ -53,6 +73,11 @@ const Greeting = ({ currentUser, logout }) => {
             <p className="button-title" >Logout</p>
           </div>
         {/* </div> */}
+
+        <div>
+          < Search />
+        </div>
+
       </hgroup>
 
     </div>
