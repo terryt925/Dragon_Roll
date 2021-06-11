@@ -20,6 +20,25 @@ const Greeting = ({ currentUser, logout }) => {
         <h1 className="header-title">Dragon Roll</h1>
       </Link>
 
+      <ul className='fab-icons-ul'>
+        {/* <li><a href='https://github.com/terryt925' target='_blank' rel="noreferrer" class="icon brands fa-github"><span class="label">Github</span></a></li> */}
+        <li>
+          <a href='https://github.com/terryt925' target='_blank' rel="noreferrer" className="fab-icons" >
+            <i className="fab fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href='https://www.linkedin.com/in/terry-thind-42a8591a1' target='_blank' rel="noreferrer" className="fab-icons">
+            <i className="fab fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href='https://angel.co/u/terry-thind' target='_blank' rel="noreferrer" className="fab-icons">
+            <i className="fab fa-angellist"></i>
+          </a>
+        </li>
+      </ul>
+
       <hgroup className='seperate-buttons'>
         <Link to="/" style={{ textDecoration: 'none' }} >
           <div className='queue-button'>

@@ -1492,7 +1492,30 @@ var Greeting = function Greeting(_ref) {
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
       className: "header-title"
-    }, "Dragon Roll")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("hgroup", {
+    }, "Dragon Roll")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+      className: "fab-icons-ul"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+      href: "https://github.com/terryt925",
+      target: "_blank",
+      rel: "noreferrer",
+      className: "fab-icons"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+      className: "fab fa-github"
+    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+      href: "https://www.linkedin.com/in/terry-thind-42a8591a1",
+      target: "_blank",
+      rel: "noreferrer",
+      className: "fab-icons"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+      className: "fab fa-linkedin"
+    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+      href: "https://angel.co/u/terry-thind",
+      target: "_blank",
+      rel: "noreferrer",
+      className: "fab-icons"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+      className: "fab fa-angellist"
+    })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("hgroup", {
       className: "seperate-buttons"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
       to: "/",
@@ -1695,33 +1718,38 @@ var Search = /*#__PURE__*/function (_React$Component) {
     value: function handleKeyDown(e) {
       var _this3 = this;
 
-      e.preventDefault();
-      console.log(e);
+      e.preventDefault(); // console.log(e)
+
       var animeNames;
-      animeNames = this.props.animes.map(function (anime) {
+      var result = false;
+      animeNames = this.props.animes.slice(0, 16).map(function (anime) {
         return anime.title.toLowerCase();
       });
 
       if (e.key === 'Enter') {
         animeNames.map(function (name, idx) {
           if (name === _this3.state.inputValue.toLowerCase()) {
-            (function () {
-              return _this3.props.history.push("/animes/".concat(idx));
-            });
+            _this3.props.history.push("/animes/".concat(idx + 1));
 
-            _this3.setState({
+            _this3.props.requestAnime("".concat(idx + 1));
+
+            result = true;
+            return _this3.setState({
               inputValue: ''
             });
           }
         });
+        if (result === false) this.props.history.push('/nomatch');
       }
     }
   }, {
     key: "render",
     value: function render() {
-      console.log(this.props);
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        // placeholder='Username'
+      // console.log(this.props)
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "search-bar-div"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        placeholder: "Anime",
         type: "text",
         value: this.state.inputValue,
         onChange: this.update('inputValue'),
@@ -1755,6 +1783,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var mSTP = function mSTP(state) {
   return {
     animes: Object.values(state.entities.animes)
@@ -1765,6 +1794,9 @@ var mDTP = function mDTP(dispatch) {
   return {
     requestAnimes: function requestAnimes() {
       return dispatch((0,_actions_anime_actions__WEBPACK_IMPORTED_MODULE_1__.requestAnimes)());
+    },
+    requestAnime: function requestAnime(animeId) {
+      return dispatch((0,_actions_anime_actions__WEBPACK_IMPORTED_MODULE_1__.requestAnime)(animeId));
     }
   };
 };
