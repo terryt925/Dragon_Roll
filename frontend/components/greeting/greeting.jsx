@@ -23,7 +23,7 @@ const Greeting = ({ currentUser, logout }) => {
       <ul className='fab-icons-ul'>
         {/* <li><a href='https://github.com/terryt925' target='_blank' rel="noreferrer" class="icon brands fa-github"><span class="label">Github</span></a></li> */}
         <li>
-          <a href='https://github.com/terryt925' target='_blank' rel="noreferrer" className="fab-icons" >
+          <a href='https://github.com/terryt925/Dragon_Roll' target='_blank' rel="noreferrer" className="fab-icons" >
             <i className="fab fa-github"></i>
           </a>
         </li>

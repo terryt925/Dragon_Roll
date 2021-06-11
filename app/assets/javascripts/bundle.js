@@ -1495,7 +1495,7 @@ var Greeting = function Greeting(_ref) {
     }, "Dragon Roll")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
       className: "fab-icons-ul"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
-      href: "https://github.com/terryt925",
+      href: "https://github.com/terryt925/Dragon_Roll",
       target: "_blank",
       rel: "noreferrer",
       className: "fab-icons"
