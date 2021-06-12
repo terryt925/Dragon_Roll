@@ -760,7 +760,7 @@ var mSTP = function mSTP(state) {
     episodes: Object.values(state.entities.episodes),
     // userId: state.entities.users[1].id,
     bookmark: {
-      user_id: state.entities.users[1].id,
+      user_id: state.entities.users,
       anime_id: state.entities.animes.id
     },
     userBookmarks: Object.values(state.entities.bookmarks)
@@ -1590,13 +1590,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _greeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./greeting */ "./frontend/components/greeting/greeting.jsx");
 
 
+ // const mapStateToProps = ({ session, entities: { users } }) => {
 
-
-var mapStateToProps = function mapStateToProps(_ref) {
-  var session = _ref.session,
-      users = _ref.entities.users;
+var mapStateToProps = function mapStateToProps(state) {
   return {
-    currentUser: users[session.id]
+    // currentUser: users[session.id]
+    currentUser: state.entities.users
   };
 };
 
@@ -2429,8 +2428,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 var usersReducer = function usersReducer() {
@@ -2440,7 +2437,8 @@ var usersReducer = function usersReducer() {
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_CURRENT_USER:
-      return Object.assign({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
+      // return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
+      return action.currentUser.id;
 
     default:
       return state;
