@@ -24,7 +24,6 @@ class Search extends React.Component {
 
   handleKeyDown(e) {
     e.preventDefault();
-    // console.log(e)
     let animeNames;
     let result = false;
     animeNames = this.props.animes.slice(0, 16).map(anime => anime.title.toLowerCase());
@@ -44,7 +43,6 @@ class Search extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
     return (
       <div className='search-bar-div'>
           <input

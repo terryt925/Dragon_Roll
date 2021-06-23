@@ -11,14 +11,10 @@ class BookmarkItem extends React.Component {
   deleteClick(e) {
     // debugger
     e.preventDefault();
-    console.log(this.props)
     this.props.deleteBookmark(this.props.anime.id);
   }
 
   render() {
-
-    console.log(this.props)
-
    let amount;
     if (this.props.anime.id !== 16) {
       amount = '12 Videos';

@@ -33,9 +33,6 @@ class EpisodeIndex extends React.Component {
   }
 
   render() {
-    // debugger
-    // console.log(this.props)
-    // console.log(this.props.bookmark.anime_id)
     let bookmark = <div onClick={this.createClick} className='not-bookmarked'>
                     <svg viewBox='0 0 48 48'>
                       <path d="M33.3,8H14.7C13.2,8,12,9.5,12,11v28.6c0,0.5,0.3,1,0.7,1.2

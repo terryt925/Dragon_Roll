@@ -15,7 +15,6 @@ const bookmarkReducer = (state = {}, action) => {
     case REMOVE_BOOKMARK:
       // delete nextState[action.bookmarkId];
       // delete nextState[action.bookmarkId];
-      // console.log(action.bookmarkId);
       return action.bookmarkId;
     default:
       return state

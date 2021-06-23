@@ -5,8 +5,6 @@ class EpisodeShow extends React.Component {
 
   componentDidMount() {
     this.props.requestEpisode(this.props.match.params.id)
-      // .then((res) => console.log(res))
-    // window.scrollTo(3, 3);
   }
 
 
