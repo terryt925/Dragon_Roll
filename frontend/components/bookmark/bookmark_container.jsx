@@ -8,7 +8,6 @@ import Bookmark from './bookmark';
 import { deleteBookmark } from '../../actions/bookmark_actions';
 import { createBookmark } from '../../actions/bookmark_actions';
 
-
 const mSTP = (state) => ({
   bookmarks: Object.values(state.entities.bookmarks)
 })
