@@ -24,6 +24,7 @@ export const requestBookmarks = () => dispatch => (
     .then(bookmarks => dispatch(receiveAllBookmarks(bookmarks)))
 )
 
+
 export const requestBookmark = (bookmarkId) => dispatch => (
   APIUtil.fetchBookmark(bookmarkId)
     .then(bookmark => dispatch(receiveBookmark(bookmark)))
