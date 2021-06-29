@@ -18,6 +18,7 @@ class Greeting extends React.Component {
           </Link>
         </div>
       );
+      
       const personalGreeting = () => (
     
         <div className='seperate-header'>

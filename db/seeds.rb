@@ -168,73 +168,73 @@ attack_on_titan.photo.attach(io: anime_attack_on_titan, filename: "attack_on_tit
 one_piece_1 = Episode.create(
   title: "Episode 1",
   anime_id: 1,
-  video_link: "https://www.youtube.com/embed/lXCWb-hkJp4"
+  video_link: "https://www.youtube.com/embed/TbHtbzAnZJ4"
 )
 
 one_piece_2 = Episode.create(
   title: "Episode 2",
   anime_id: 1,
-  video_link: "https://www.youtube.com/embed/9iNOXZA05PA"
+  video_link: "https://www.youtube.com/embed/TbHtbzAnZJ4"
 )
 
 one_piece_3 = Episode.create(
   title: "Episode 3",
   anime_id: 1,
-  video_link: "https://www.youtube.com/embed/c6PR9xsNZJM"
+  video_link: "https://www.youtube.com/embed/TbHtbzAnZJ4"
 )
 
 one_piece_4 = Episode.create(
   title: "Episode 4",
   anime_id: 1,
-  video_link: "https://www.youtube.com/embed/VKoViDjneHI"
+  video_link: "https://www.youtube.com/embed/TbHtbzAnZJ4"
 )
 
 one_piece_5 = Episode.create(
   title: "Episode 5",
   anime_id: 1,
-  video_link: "https://www.youtube.com/embed/XH8YtiGyJe4"
+  video_link: "https://www.youtube.com/embed/TbHtbzAnZJ4"
 )
 
 one_piece_6 = Episode.create(
   title: "Episode 6",
   anime_id: 1,
-  video_link: "https://www.youtube.com/embed/zVwEGwX1HYk"
+  video_link: "https://www.youtube.com/embed/TbHtbzAnZJ4"
 )
 
 one_piece_7 = Episode.create(
   title: "Episode 7",
   anime_id: 1,
-  video_link: "https://www.youtube.com/embed/27P3wPLxcUs"
+  video_link: "https://www.youtube.com/embed/TbHtbzAnZJ4"
 )
 
 one_piece_8 = Episode.create(
   title: "Episode 8",
   anime_id: 1,
-  video_link: "https://www.youtube.com/embed/Z-n-wuP1sjE"
+  video_link: "https://www.youtube.com/embed/TbHtbzAnZJ4"
 )
 
 one_piece_9 = Episode.create(
   title: "Episode 9",
   anime_id: 1,
-  video_link: "https://www.youtube.com/embed/fda10_NjxYY"
+  video_link: "https://www.youtube.com/embed/TbHtbzAnZJ4"
 )
 
 one_piece_10 = Episode.create(
   title: "Episode 10",
   anime_id: 1,
-  video_link: "https://www.youtube.com/embed/q45IbVQYFmA"
+  video_link: "https://www.youtube.com/embed/TbHtbzAnZJ4"
 )
 
 one_piece_11 = Episode.create(
   title: "Episode 11",
   anime_id: 1,
-  video_link: "https://www.youtube.com/embed/TjyFNU5sKhM"
+  video_link: "https://www.youtube.com/embed/TbHtbzAnZJ4"
 )
 
 one_piece_12 = Episode.create(
   title: "Episode 12",
   anime_id: 1,
-  video_link: "https://www.youtube.com/embed/apg-O1WMxIU"
+  video_link: "https://www.youtube.com/embed/TbHtbzAnZJ4"
 )
 
 
@@ -256,25 +256,25 @@ jujutsu_kaisen_2 = Episode.create(
 jujutsu_kaisen_3 = Episode.create(
   title: "Episode 3",
   anime_id: 2,
-  video_link: "https://www.youtube.com/embed/1_YMejXYur0"
+  video_link: "https://www.youtube.com/embed/VpO6APNqY1c"
 )
 
 jujutsu_kaisen_4 = Episode.create(
   title: "Episode 4",
   anime_id: 2,
-  video_link: "https://www.youtube.com/embed/Xaqo0YZkeWw"
+  video_link: "https://www.youtube.com/embed/VpO6APNqY1c"
 )
 
 jujutsu_kaisen_5 = Episode.create(
   title: "Episode 5",
   anime_id: 2,
-  video_link: "https://www.youtube.com/embed/Ep3kYxOfNQc"
+  video_link: "https://www.youtube.com/embed/VpO6APNqY1c"
 )
 
 jujutsu_kaisen_6 = Episode.create(
   title: "Episode 6",
   anime_id: 2,
-  video_link: "https://www.youtube.com/embed/QAe8aGCZ3wA"
+  video_link: "https://www.youtube.com/embed/VpO6APNqY1c"
 )
 
 jujutsu_kaisen_7 = Episode.create(
@@ -286,13 +286,13 @@ jujutsu_kaisen_7 = Episode.create(
 jujutsu_kaisen_8 = Episode.create(
   title: "Episode 8",
   anime_id: 2,
-  video_link: "https://www.youtube.com/embed/_Xrnh8rIFLE"
+  video_link: "https://www.youtube.com/embed/VpO6APNqY1c"
 )
 
 jujutsu_kaisen_9 = Episode.create(
   title: "Episode 9",
   anime_id: 2,
-  video_link: "https://www.youtube.com/embed/Guc_1dAORcw"
+  video_link: "https://www.youtube.com/embed/VpO6APNqY1c"
 )
 
 jujutsu_kaisen_10 = Episode.create(
@@ -310,7 +310,7 @@ jujutsu_kaisen_11 = Episode.create(
 jujutsu_kaisen_12 = Episode.create(
   title: "Episode 12",
   anime_id: 2,
-  video_link: "https://www.youtube.com/embed/C4Qp0QXsohA"
+  video_link: "https://www.youtube.com/embed/VpO6APNqY1c"
 )
 
 
@@ -350,7 +350,7 @@ my_hero_academia_5 = Episode.create(
 my_hero_academia_6 = Episode.create(
   title: "Episode 6",
   anime_id: 3,
-  video_link: "https://www.youtube.com/embed/RDGRhHd_n1I"
+  video_link: "https://www.youtube.com/embed/Hn8jNUCJuSc"
 )
 
 my_hero_academia_7 = Episode.create(
@@ -413,55 +413,55 @@ attack_on_titan_3 = Episode.create(
 attack_on_titan_4 = Episode.create(
   title: "Episode 4",
   anime_id: 4,
-  video_link: "https://www.youtube.com/embed/rgpdRu_1-NI"
+  video_link: "https://www.youtube.com/embed/MUCN-JwUvbY"
 )
 
 attack_on_titan_5 = Episode.create(
   title: "Episode 5",
   anime_id: 4,
-  video_link: "https://www.youtube.com/embed/Eod94wD32Q0"
+  video_link: "https://www.youtube.com/embed/MUCN-JwUvbY"
 )
 
 attack_on_titan_6 = Episode.create(
   title: "Episode 6",
   anime_id: 4,
-  video_link: "https://www.youtube.com/embed/6Dg-49qGjVU"
+  video_link: "https://www.youtube.com/embed/MUCN-JwUvbY"
 )
 
 attack_on_titan_7 = Episode.create(
   title: "Episode 7",
   anime_id: 4,
-  video_link: "https://www.youtube.com/embed/EaGn7HISNQ0"
+  video_link: "https://www.youtube.com/embed/MUCN-JwUvbY"
 )
 
 attack_on_titan_8 = Episode.create(
   title: "Episode 8",
   anime_id: 4,
-  video_link: "https://www.youtube.com/embed/T_NTFF6x3Fk"
+  video_link: "https://www.youtube.com/embed/MUCN-JwUvbY"
 )
 
 attack_on_titan_9 = Episode.create(
   title: "Episode 9",
   anime_id: 4,
-  video_link: "https://www.youtube.com/embed/9YFcmFDHSX4"
+  video_link: "https://www.youtube.com/embed/MUCN-JwUvbY"
 )
 
 attack_on_titan_10 = Episode.create(
   title: "Episode 10",
   anime_id: 4,
-  video_link: "https://www.youtube.com/embed/k4tQbHPoT-c"
+  video_link: "https://www.youtube.com/embed/MUCN-JwUvbY"
 )
 
 attack_on_titan_11 = Episode.create(
   title: "Episode 11",
   anime_id: 4,
-  video_link: "https://www.youtube.com/embed/_3DOU4qzLMc"
+  video_link: "https://www.youtube.com/embed/MUCN-JwUvbY"
 )
 
 attack_on_titan_12 = Episode.create(
   title: "Episode 12",
   anime_id: 4,
-  video_link: "https://www.youtube.com/embed/Ha3ACZPShzA"
+  video_link: "https://www.youtube.com/embed/MUCN-JwUvbY"
 )
 
 
@@ -477,7 +477,7 @@ dragon_ball_super_1 = Episode.create(
 dragon_ball_super_2 = Episode.create(
   title: "Episode 2",
   anime_id: 5,
-  video_link: "https://www.youtube.com/embed/D7CUkZv4R68"
+  video_link: "https://www.youtube.com/embed/FHgm89hKpXU"
 )
 
 dragon_ball_super_3 = Episode.create(
@@ -531,7 +531,7 @@ dragon_ball_super_10 = Episode.create(
 dragon_ball_super_11 = Episode.create(
   title: "Episode 11",
   anime_id: 5,
-  video_link: "https://www.youtube.com/embed/mWoLt5bUvs4"
+  video_link: "https://www.youtube.com/embed/FHgm89hKpXU"
 )
 
 dragon_ball_super_12 = Episode.create(
@@ -558,19 +558,19 @@ naruto_shippuden_2 = Episode.create(
 naruto_shippuden_3 = Episode.create(
   title: "Episode 3",
   anime_id: 6,
-  video_link: "https://www.youtube.com/embed/tcEnwc0mdRI"
+  video_link: "https://www.youtube.com/embed/thh7bVCgDHs"
 )
 
 naruto_shippuden_4 = Episode.create(
   title: "Episode 4",
   anime_id: 6,
-  video_link: "https://www.youtube.com/embed/4LvP00uDnm0"
+  video_link: "https://www.youtube.com/embed/thh7bVCgDHs"
 )
 
 naruto_shippuden_5 = Episode.create(
   title: "Episode 5",
   anime_id: 6,
-  video_link: "https://www.youtube.com/embed/iXeH7emwxwE"
+  video_link: "https://www.youtube.com/embed/thh7bVCgDHs"
 )
 
 naruto_shippuden_6 = Episode.create(
@@ -582,7 +582,7 @@ naruto_shippuden_6 = Episode.create(
 naruto_shippuden_7 = Episode.create(
   title: "Episode 7",
   anime_id: 6,
-  video_link: "https://www.youtube.com/embed/5lHzzix58Po"
+  video_link: "https://www.youtube.com/embed/thh7bVCgDHs"
 )
 
 naruto_shippuden_8 = Episode.create(
@@ -622,7 +622,7 @@ naruto_shippuden_12 = Episode.create(
 black_clover_1 = Episode.create(
   title: "Episode 1",
   anime_id: 7,
-  video_link: "https://www.youtube.com/embed/bucDYBQqWLE"
+  video_link: "https://www.youtube.com/embed/uaDeobqouGQ"
 )
 
 black_clover_2 = Episode.create(
@@ -652,13 +652,13 @@ black_clover_5 = Episode.create(
 black_clover_6 = Episode.create(
   title: "Episode 6",
   anime_id: 7,
-  video_link: "https://www.youtube.com/embed/1DedgoWMMwg"
+  video_link: "https://www.youtube.com/embed/uaDeobqouGQ"
 )
 
 black_clover_7 = Episode.create(
   title: "Episode 7",
   anime_id: 7,
-  video_link: "https://www.youtube.com/embed/bqHswO6bJu4"
+  video_link: "https://www.youtube.com/embed/uaDeobqouGQ"
 )
 
 black_clover_8 = Episode.create(
@@ -670,7 +670,7 @@ black_clover_8 = Episode.create(
 black_clover_9 = Episode.create(
   title: "Episode 9",
   anime_id: 7,
-  video_link: "https://www.youtube.com/embed/VEA4DHHt588"
+  video_link: "https://www.youtube.com/embed/uaDeobqouGQ"
 )
 
 black_clover_10 = Episode.create(
@@ -715,49 +715,49 @@ dr_stone_3 = Episode.create(
 dr_stone_4 = Episode.create(
   title: "Episode 4",
   anime_id: 8,
-  video_link: "https://www.youtube.com/embed/YJ4fMCnMFBk"
+  video_link: "https://www.youtube.com/embed/KnEMDDMYYfU"
 )
 
 dr_stone_5 = Episode.create(
   title: "Episode 5",
   anime_id: 8,
-  video_link: "https://www.youtube.com/embed/gvMH73Y-nLQ"
+  video_link: "https://www.youtube.com/embed/KnEMDDMYYfU"
 )
 
 dr_stone_6 = Episode.create(
   title: "Episode 6",
   anime_id: 8,
-  video_link: "https://www.youtube.com/embed/bTpkLBNM7Ng"
+  video_link: "https://www.youtube.com/embed/KnEMDDMYYfU"
 )
 
 dr_stone_7 = Episode.create(
   title: "Episode 7",
   anime_id: 8,
-  video_link: "https://www.youtube.com/embed/SHL_EvxCjpo"
+  video_link: "https://www.youtube.com/embed/KnEMDDMYYfU"
 )
 
 dr_stone_8 = Episode.create(
   title: "Episode 8",
   anime_id: 8,
-  video_link: "https://www.youtube.com/embed/z6mDuBsQEKk"
+  video_link: "https://www.youtube.com/embed/KnEMDDMYYfU"
 )
 
 dr_stone_9 = Episode.create(
   title: "Episode 9",
   anime_id: 8,
-  video_link: "https://www.youtube.com/embed/NXUImP_D4JY"
+  video_link: "https://www.youtube.com/embed/KnEMDDMYYfU"
 )
 
 dr_stone_10 = Episode.create(
   title: "Episode 10",
   anime_id: 8,
-  video_link: "https://www.youtube.com/embed/zA5fJLP7VN0"
+  video_link: "https://www.youtube.com/embed/KnEMDDMYYfU"
 )
 
 dr_stone_11 = Episode.create(
   title: "Episode 11",
   anime_id: 8,
-  video_link: "https://www.youtube.com/embed/xSQEOccIRfc"
+  video_link: "https://www.youtube.com/embed/KnEMDDMYYfU"
 )
 
 dr_stone_12 = Episode.create(
@@ -778,19 +778,19 @@ boruto_1 = Episode.create(
 boruto_2 = Episode.create(
   title: "Episode 2",
   anime_id: 9,
-  video_link: "https://www.youtube.com/embed/A-n1-OERU7w"
+  video_link: "https://www.youtube.com/embed/ppLE9xycGm4"
 )
 
 boruto_3 = Episode.create(
   title: "Episode 3",
   anime_id: 9,
-  video_link: "https://www.youtube.com/embed/Wy0_i7cOj20"
+  video_link: "https://www.youtube.com/embed/ppLE9xycGm4"
 )
 
 boruto_4 = Episode.create(
   title: "Episode 4",
   anime_id: 9,
-  video_link: "https://www.youtube.com/embed/LAERcb53v54"
+  video_link: "https://www.youtube.com/embed/ppLE9xycGm4"
 )
 
 boruto_5 = Episode.create(
@@ -802,37 +802,37 @@ boruto_5 = Episode.create(
 boruto_6 = Episode.create(
   title: "Episode 6",
   anime_id: 9,
-  video_link: "https://www.youtube.com/embed/_V1jcrr2EtI"
+  video_link: "https://www.youtube.com/embed/ppLE9xycGm4"
 )
 
 boruto_7 = Episode.create(
   title: "Episode 7",
   anime_id: 9,
-  video_link: "https://www.youtube.com/embed/HWa1qF6JZM0"
+  video_link: "https://www.youtube.com/embed/ppLE9xycGm4"
 )
 
 boruto_8 = Episode.create(
   title: "Episode 8",
   anime_id: 9,
-  video_link: "https://www.youtube.com/embed/gD9eSNf_gdA"
+  video_link: "https://www.youtube.com/embed/ppLE9xycGm4"
 )
 
 boruto_9 = Episode.create(
   title: "Episode 9",
   anime_id: 9,
-  video_link: "https://www.youtube.com/embed/9udfKOihDKY"
+  video_link: "https://www.youtube.com/embed/ppLE9xycGm4"
 )
 
 boruto_10 = Episode.create(
   title: "Episode 10",
   anime_id: 9,
-  video_link: "https://www.youtube.com/embed/AskFGpw5Ifo"
+  video_link: "https://www.youtube.com/embed/ppLE9xycGm4"
 )
 
 boruto_11 = Episode.create(
   title: "Episode 11",
   anime_id: 9,
-  video_link: "https://www.youtube.com/embed/O8NTR1mBc-g"
+  video_link: "https://www.youtube.com/embed/ppLE9xycGm4"
 )
 
 boruto_12 = Episode.create(
@@ -847,7 +847,7 @@ boruto_12 = Episode.create(
 demon_slayer_1 = Episode.create(
   title: "Episode 1",
   anime_id: 10,
-  video_link: "https://www.youtube.com/embed/Si_J2oUJAkw"
+  video_link: "https://www.youtube.com/embed/bFwdl2PDAFM"
 )
 
 demon_slayer_2 = Episode.create(
@@ -859,7 +859,7 @@ demon_slayer_2 = Episode.create(
 demon_slayer_3 = Episode.create(
   title: "Episode 3",
   anime_id: 10,
-  video_link: "https://www.youtube.com/embed/TowgLJvsBs4"
+  video_link: "https://www.youtube.com/embed/bFwdl2PDAFM"
 )
 
 demon_slayer_4 = Episode.create(
@@ -895,7 +895,7 @@ demon_slayer_8 = Episode.create(
 demon_slayer_9 = Episode.create(
   title: "Episode 9",
   anime_id: 10,
-  video_link: "https://www.youtube.com/embed/e9BCFlcog7Y"
+  video_link: "https://www.youtube.com/embed/bFwdl2PDAFM"
 )
 
 demon_slayer_10 = Episode.create(
@@ -907,13 +907,13 @@ demon_slayer_10 = Episode.create(
 demon_slayer_11 = Episode.create(
   title: "Episode 11",
   anime_id: 10,
-  video_link: "https://www.youtube.com/embed/XI8JhyoA8VI"
+  video_link: "https://www.youtube.com/embed/bFwdl2PDAFM"
 )
 
 demon_slayer_12 = Episode.create(
   title: "Episode 12",
   anime_id: 10,
-  video_link: "https://www.youtube.com/embed/sv8fzznqXK0"
+  video_link: "https://www.youtube.com/embed/bFwdl2PDAFM"
 )
 
 
@@ -940,55 +940,55 @@ haikyu_3 = Episode.create(
 haikyu_4 = Episode.create(
   title: "Episode 4",
   anime_id: 11,
-  video_link: "https://www.youtube.com/embed/fRbaDZyD8is"
+  video_link: "https://www.youtube.com/embed/JOGp2c7-cKc"
 )
 
 haikyu_5 = Episode.create(
   title: "Episode 5",
   anime_id: 11,
-  video_link: "https://www.youtube.com/embed/LduCUqqHew0"
+  video_link: "https://www.youtube.com/embed/JOGp2c7-cKc"
 )
 
 haikyu_6 = Episode.create(
   title: "Episode 6",
   anime_id: 11,
-  video_link: "https://www.youtube.com/embed/Rz_WwJc3WPs"
+  video_link: "https://www.youtube.com/embed/JOGp2c7-cKc"
 )
 
 haikyu_7 = Episode.create(
   title: "Episode 7",
   anime_id: 11,
-  video_link: "https://www.youtube.com/embed/Xf7lyjUF9n0"
+  video_link: "https://www.youtube.com/embed/JOGp2c7-cKc"
 )
 
 haikyu_8 = Episode.create(
   title: "Episode 8",
   anime_id: 11,
-  video_link: "https://www.youtube.com/embed/dQ1M0wh0mZA"
+  video_link: "https://www.youtube.com/embed/JOGp2c7-cKc"
 )
 
 haikyu_9 = Episode.create(
   title: "Episode 9",
   anime_id: 11,
-  video_link: "https://www.youtube.com/embed/2RENGrAO3Ao"
+  video_link: "https://www.youtube.com/embed/JOGp2c7-cKc"
 )
 
 haikyu_10 = Episode.create(
   title: "Episode 10",
   anime_id: 11,
-  video_link: "https://www.youtube.com/embed/gJLF0Wa1G6U"
+  video_link: "https://www.youtube.com/embed/JOGp2c7-cKc"
 )
 
 haikyu_11 = Episode.create(
   title: "Episode 11",
   anime_id: 11,
-  video_link: "https://www.youtube.com/embed/j3JuAf-G92A"
+  video_link: "https://www.youtube.com/embed/JOGp2c7-cKc"
 )
 
 haikyu_12 = Episode.create(
   title: "Episode 12",
   anime_id: 11,
-  video_link: "https://www.youtube.com/embed/p_He7tkeb24"
+  video_link: "https://www.youtube.com/embed/JOGp2c7-cKc"
 )
 
 
@@ -1009,25 +1009,25 @@ hunter_x_hunter_2 = Episode.create(
 hunter_x_hunter_3 = Episode.create(
   title: "Episode 3",
   anime_id: 12,
-  video_link: "https://www.youtube.com/embed/BUmq2KvKvQw"
+  video_link: "https://www.youtube.com/embed/d6kBeJjTGnY"
 )
 
 hunter_x_hunter_4 = Episode.create(
   title: "Episode 4",
   anime_id: 12,
-  video_link: "https://www.youtube.com/embed/2BjSNRNSHg4"
+  video_link: "https://www.youtube.com/embed/d6kBeJjTGnY"
 )
 
 hunter_x_hunter_5 = Episode.create(
   title: "Episode 5",
   anime_id: 12,
-  video_link: "https://www.youtube.com/embed/5HTUa1rLOSs"
+  video_link: "https://www.youtube.com/embed/d6kBeJjTGnY"
 )
 
 hunter_x_hunter_6 = Episode.create(
   title: "Episode 6",
   anime_id: 12,
-  video_link: "https://www.youtube.com/embed/mFO-XIc9b-g"
+  video_link: "https://www.youtube.com/embed/d6kBeJjTGnY"
 )
 
 hunter_x_hunter_7 = Episode.create(
@@ -1045,7 +1045,7 @@ hunter_x_hunter_8 = Episode.create(
 hunter_x_hunter_9 = Episode.create(
   title: "Episode 9",
   anime_id: 12,
-  video_link: "https://www.youtube.com/embed/_pu2RYaRSZI"
+  video_link: "https://www.youtube.com/embed/d6kBeJjTGnY"
 )
 
 hunter_x_hunter_10 = Episode.create(
@@ -1057,13 +1057,13 @@ hunter_x_hunter_10 = Episode.create(
 hunter_x_hunter_11 = Episode.create(
   title: "Episode 11",
   anime_id: 12,
-  video_link: "https://www.youtube.com/embed/4rk2vvNOH8E"
+  video_link: "https://www.youtube.com/embed/d6kBeJjTGnY"
 )
 
 hunter_x_hunter_12 = Episode.create(
   title: "Episode 12",
   anime_id: 12,
-  video_link: "https://www.youtube.com/embed/6-jeuCauDEw"
+  video_link: "https://www.youtube.com/embed/d6kBeJjTGnY"
 )
 
 
@@ -1147,7 +1147,7 @@ jojo_12 = Episode.create(
 naruto_1 = Episode.create(
   title: "Episode 1",
   anime_id: 14,
-  video_link: "https://www.youtube.com/embed/i8kf0-QqnR4"
+  video_link: "https://www.youtube.com/embed/-G9BqkgZXRA"
 )
 
 naruto_2 = Episode.create(
@@ -1207,7 +1207,7 @@ naruto_10 = Episode.create(
 naruto_11 = Episode.create(
   title: "Episode 11",
   anime_id: 14,
-  video_link: "https://www.youtube.com/embed/HukT_Wqwf_c"
+  video_link: "https://www.youtube.com/embed/-G9BqkgZXRA"
 )
 
 naruto_12 = Episode.create(
@@ -1222,7 +1222,7 @@ naruto_12 = Episode.create(
 fire_force_1 = Episode.create(
   title: "Episode 1",
   anime_id: 15,
-  video_link: "https://www.youtube.com/embed/bS1panhn2CM"
+  video_link: "https://www.youtube.com/embed/fzM43HZ6oeg"
 )
 
 fire_force_2 = Episode.create(
@@ -1234,25 +1234,25 @@ fire_force_2 = Episode.create(
 fire_force_3 = Episode.create(
   title: "Episode 3",
   anime_id: 15,
-  video_link: "https://www.youtube.com/embed/BoKZpboZuYA"
+  video_link: "https://www.youtube.com/embed/fzM43HZ6oeg"
 )
 
 fire_force_4 = Episode.create(
   title: "Episode 4",
   anime_id: 15,
-  video_link: "https://www.youtube.com/embed/eMew9QvGuWg"
+  video_link: "https://www.youtube.com/embed/fzM43HZ6oeg"
 )
 
 fire_force_5 = Episode.create(
   title: "Episode 5",
   anime_id: 15,
-  video_link: "https://www.youtube.com/embed/-QOJ5U2fEuI"
+  video_link: "https://www.youtube.com/embed/fzM43HZ6oeg"
 )
 
 fire_force_6 = Episode.create(
   title: "Episode 6",
   anime_id: 15,
-  video_link: "https://www.youtube.com/embed/6HyFX5QRsVg"
+  video_link: "https://www.youtube.com/embed/fzM43HZ6oeg"
 )
 
 fire_force_7 = Episode.create(
@@ -1276,7 +1276,7 @@ fire_force_9 = Episode.create(
 fire_force_10 = Episode.create(
   title: "Episode 10",
   anime_id: 15,
-  video_link: "https://www.youtube.com/embed/2RT1ow9dNhQ"
+  video_link: "https://www.youtube.com/embed/fzM43HZ6oeg"
 )
 
 fire_force_11 = Episode.create(
@@ -1288,11 +1288,11 @@ fire_force_11 = Episode.create(
 fire_force_12 = Episode.create(
   title: "Episode 12",
   anime_id: 15,
-  video_link: "https://www.youtube.com/embed/gbStjm5VoFo"
+  video_link: "https://www.youtube.com/embed/fzM43HZ6oeg"
 )
 
 
-# fire force
+# your name
 
 your_name_1 = Episode.create(
   title: "Full Movie",
