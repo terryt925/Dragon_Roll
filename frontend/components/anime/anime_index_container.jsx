@@ -13,7 +13,6 @@ const mDTP = (dispatch) => ({
   requestAnimes: () => dispatch(requestAnimes()),
   requestBookmarks: () => dispatch(requestBookmarks()),
   deleteBookmark: (bookmarkId) => dispatch(deleteBookmark(bookmarkId)),
-
 })
 
 export default connect(mSTP, mDTP)(AnimeIndex);

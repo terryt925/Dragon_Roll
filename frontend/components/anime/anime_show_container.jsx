@@ -12,7 +12,8 @@ const mSTP = (state) => ({
   episodes: Object.values(state.entities.episodes),
   // userId: state.entities.users[1].id,
   bookmark: {
-    user_id: state.entities.users,
+    // user_id: state.entities.users,
+    user_id: state.entities.users[1].id,
     anime_id: state.entities.animes.id
   },
   userBookmarks: Object.values(state.entities.bookmarks),

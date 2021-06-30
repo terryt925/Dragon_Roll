@@ -9,7 +9,7 @@ class Greeting extends React.Component {
   }
 
   render() {
-
+    // console.log(this.props)
     // const Greeting = ({ currentUser, logout }) => {
       const sessionLinks = () => (
         <div className='center-header'>
@@ -88,10 +88,11 @@ class Greeting extends React.Component {
     
       );
     
-      // return currentUser ? personalGreeting() : sessionLinks();
-      return this.props.currentUser > 0 ? personalGreeting() : sessionLinks();
+      // return this.props.currentUser && this.props.currentUser > 0 ? personalGreeting() : sessionLinks();
+      // return this.props.currentUser.id > 0 ? personalGreeting() : sessionLinks();
       // return Object.keys(this.props.currentUser).length === 0 ? sessionLinks() : personalGreeting();
-    
+      return Object.keys(this.props.currentUser).length > 0 ? personalGreeting() : sessionLinks();
+
   // }
   };
 }
