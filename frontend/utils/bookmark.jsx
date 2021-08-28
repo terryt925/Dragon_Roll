@@ -5,7 +5,6 @@ export const fetchBookmarks = () => (
   })
 )
 
-
 export const fetchBookmark = (bookmarkId) => (
   $.ajax({
     method: 'GET',
