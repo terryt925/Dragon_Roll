@@ -12,7 +12,6 @@ export const fetchBookmark = (bookmarkId) => (
   })
 )
 
-
 export const createBookmark = (bookmark) => (
   $.ajax({
     method: "POST",
